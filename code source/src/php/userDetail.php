@@ -16,11 +16,8 @@
         
     </head>
     <body>
-        <br>
         <?php include "menu.php" ?>
         <?php include "checkConnection.php" ?>
-        <br>
-        <br>
         <?php
 
         $userName = $_SESSION["userName"];
@@ -31,6 +28,9 @@
         ?>
             
         <?php echo "<h1>Détails de l'utilisateur ".$user['useName']."</h1>"?>
+        <form action="disconnect.php">
+            <button type="submit" id="send" class="connButton">Se déconnecter</button>
+        </form>
         <?php include 'footer.php' ?>
 
     </body>

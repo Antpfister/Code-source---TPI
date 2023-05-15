@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Ven 12 Mai 2023 à 14:24
+-- Généré le :  Lun 15 Mai 2023 à 14:24
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.18
 
@@ -34,6 +34,15 @@ CREATE TABLE `t_article` (
   `artDescription` varchar(255) CHARACTER SET utf8 NOT NULL,
   `idUser` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `t_article`
+--
+
+INSERT INTO `t_article` (`idArticle`, `artName`, `artStatus`, `artPicture`, `artDescription`, `idUser`) VALUES
+(3, 'long vue', '1', 'longvue.jpg', 'c\'est une long vue', 2),
+(5, 'Tondeuse', '0', 'Tondeuses.jpg', 'c\'est une tondeuse :D', 1),
+(6, 'jumelle', '0', 'jumelle.jpg', 'ce sont des jumelles vraiment très sympa.', 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +79,8 @@ CREATE TABLE `t_user` (
 --
 
 INSERT INTO `t_user` (`idUser`, `useName`, `usePassword`, `useLocal`, `useNbArticles`, `useNbLoan`, `useRegisterDate`) VALUES
-(1, 'antpfister', 'qwer1234', 'Lausanne', '0', '0', '2023-05-12');
+(1, 'antpfister', 'qwer1234', 'Lausanne', '0', '0', '2023-05-12'),
+(2, 'client', 'qwer1234', 'Lutry', '0', '0', '2023-05-15');
 
 --
 -- Index pour les tables exportées
@@ -105,7 +115,7 @@ ALTER TABLE `t_user`
 -- AUTO_INCREMENT pour la table `t_article`
 --
 ALTER TABLE `t_article`
-  MODIFY `idArticle` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idArticle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `t_loan`
 --
@@ -115,7 +125,7 @@ ALTER TABLE `t_loan`
 -- AUTO_INCREMENT pour la table `t_user`
 --
 ALTER TABLE `t_user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Contraintes pour les tables exportées
 --

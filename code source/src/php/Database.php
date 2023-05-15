@@ -90,6 +90,126 @@ class Database {
             return $result[0];
         }
     }
+    public function getUserID($idUser){
+        $query = 'SELECT idUser FROM t_user WHERE idUser = :idUser';
+
+        $binds = array(
+            0 => array(
+                'marker' => 'idUser',
+                'value'  => $idUser,
+                'type'   => PDO::PARAM_STR
+            )
+        );
+
+        $req = $this->queryPrepareExecute($query, $binds);
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+        if (!empty($result)) {
+            return $result[0];
+        }
+    }
+    public function insertArticle($artName,$artstatus,$artimage,$artdescription,$artuser) {
+        $query = "INSERT INTO t_article(artName,artStatus,artPicture,artDescription,idUser) 
+        VALUES(:artName,:artstatus,:artimage,:artdescription,:artuser)";
+
+        $binds = array(
+            0 => array(
+                'marker' => 'artName',
+                'value'  => $artName,
+                'type'   => PDO::PARAM_STR
+            ),
+            1 => array(
+                'marker' => 'artstatus',
+                'value'  => $artstatus,
+                'type'   => PDO::PARAM_INT
+            ),
+            2 => array(
+                'marker' => 'artimage',
+                'value'  => $artimage,
+                'type'   => PDO::PARAM_STR
+            ),
+            3 => array(
+                'marker' => 'artdescription',
+                'value'  => $artdescription,
+                'type'   => PDO::PARAM_STR
+            ),
+            4 => array(
+                'marker' => 'artuser',
+                'value'  => $artuser,
+                'type'   => PDO::PARAM_INT
+            ),
+        );
+
+        $req = $this->queryPrepareExecute($query, $binds);
+
+        $this->unsetData($req);
+    }
+    public function getAllArticlesAndInfos(){
+        $req = $this->querySimpleExecute('SELECT * FROM t_article
+        INNER JOIN t_user ON t_article.idUser = t_user.idUser');
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+        return $result;
+    }
+    public function getArticle($id){
+        $query = 'SELECT * FROM t_article WHERE idArticle = :id';
+
+        $binds = array(
+            0 => array(
+                'marker' => 'id',
+                'value'  => $id,
+                'type'   => PDO::PARAM_INT
+            )
+        );
+
+        $req = $this->queryPrepareExecute($query, $binds);
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+        return $result[0];
+    }
+    public function getUser($idUser){
+        $query = 'SELECT * FROM t_user WHERE idUser = :idUser';
+
+        $binds = array(
+            0 => array(
+                'marker' => 'idUser',
+                'value'  => $idUser,
+                'type'   => PDO::PARAM_INT
+            )
+        );
+
+        $req = $this->queryPrepareExecute($query, $binds);
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+        return $result[0];
+    }
+
+    public function suppArticle($idArticle){
+        $query = 'DELETE FROM `t_article` WHERE `idArticle` = :idArticle';
+
+        $binds = array(
+            0 => array(
+                'marker' => 'idArticle',
+                'value'  => $idArticle,
+                'type'   => PDO::PARAM_INT
+            )
+        );
+
+        $req = $this->queryPrepareExecute($query, $binds);
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+
+    }
 
 } 
 
