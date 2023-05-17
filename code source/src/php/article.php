@@ -28,6 +28,13 @@
         <div class="TitleListeArticle">
             <h1>Article info - <?= $article['artName'] ?></h1>
         </div>
+        <div class="errMessage">
+            <?php  if (isset($_GET['error'])) {
+
+             ?>
+            <p>L'article n'est pas disponible !</p>
+            <?php }?>
+        </div>
         <div class="infoArticle">
             <div class="imgArticle">
                 <img class="imgarticle" src="../../resources/images/<?= $article["artPicture"] ?>" alt="">
@@ -49,11 +56,17 @@
         </div>
         <br>
         <br>
-        <div class="btnAddArticle">
+        <div class="btnSuppArticle">
             <form action='suppArticle.php' method='get'>
                 <input type='hidden' name="picture" value='<?php echo $article["artPicture"]; ?>'>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
                 <input type="submit" value="Supprimer l'article">
+            </form>
+        </div>
+        <div class="btnModifArticle">
+            <form action='modifArticle.php' method='get'>
+                <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
+                <input type="submit" value="Modifier cette article">
             </form>
         </div>
         <br>

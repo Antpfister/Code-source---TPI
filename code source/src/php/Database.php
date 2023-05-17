@@ -210,7 +210,41 @@ class Database {
 
 
     }
+    public function userModifArticle($id,$newname,$newstatus,$newimage,$newdescription){
+        $query = "UPDATE t_article SET artName = :newname, artStatus = :newstatus, artPicture = :newimage, artDescription = :newdescription WHERE idArticle = :id";
 
+        $binds = array(
+            0 => array(
+                'marker' => 'id',
+                'value'  => $id,
+                'type'   => PDO::PARAM_INT
+            ),
+            1 => array(
+                'marker' => 'newname',
+                'value'  => $newname,
+                'type'   => PDO::PARAM_STR
+            ),
+            2 => array(
+                'marker' => 'newstatus',
+                'value'  => $newstatus,
+                'type'   => PDO::PARAM_INT
+            ),
+            3 => array(
+                'marker' => 'newimage',
+                'value'  => $newimage,
+                'type'   => PDO::PARAM_STR
+            ),
+            4 => array(
+                'marker' => 'newdescription',
+                'value'  => $newdescription,
+                'type'   => PDO::PARAM_STR
+            ),
+        );
+            
+        $req = $this->queryPrepareExecute($query,$binds);
+
+        $this->unsetData($req);
+    }
 } 
 
 ?>
