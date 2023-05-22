@@ -9,10 +9,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href="../../resources/css/style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title>Modifier article - Gestion de prêt entre voisins</title>
     </head>
     <body>
+    <?php $actif = 0?>
         <?php
             include "menu.php";
             include "checkConnection.php";
@@ -29,10 +30,10 @@
             $article=$connector->getArticle($idArticle);
             $connector = null;
         ?>
-        <div class="titleAddArticle">
+        <div class="titleModifArticle">
             <h1 >Modification de l'article "<?= $article['artName'] ?>"</h1>
         </div>
-        <div class="divformAddArticle">
+        <div class="divformModifArticle">
             <form method="post" action="checkModifArticle.php" enctype="multipart/form-data">
                 <label for="Name">Nom de l'article :</label>
                 <input type="text" name="Name" class="AddLabel" id="Name" placeholder="<?= $article['artName'] ?>">

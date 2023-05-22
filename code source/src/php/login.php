@@ -9,17 +9,18 @@
     <head>
         <!-- Tag meta -->
         <meta charset="utf-8"><!-- CSS -->
-        <link rel="stylesheet" href="../../resources/css/style.css"><!-- Title -->
+        <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title>Login - Gestion des prêts entre voisins</title>
     </head>
     <body>
+    <?php $actif = 3?>
         <?php include 'menu.php' ?>
         <div class="loginTitle">
-            <h1>Connecter-Vous !!</h1>
+            <h1>Connectez-Vous !!</h1>
         </div>
         <div class="connContainer">
             <form method="post" action="checklogin.php" autocomplete="off">
-                <h1 class="connTitle">Renseigner vos information de connexion svp !</h1>
+                <h1 class="connTitle">Renseignez vos information de connexion svp !</h1>
                 <div class="connLabelContainer">
                     <input type="text" class="connLabel" placeholder="Nom d'utilisateur" name="userName">
                 </div>

@@ -10,10 +10,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../../resources/css/style.css">
+        <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title id="title">Article - Gestion de prêt entre voisins</title>
     </head>
     <body>
+    <?php $actif = 0?>
         <?php include "menu.php"?>
         <?php include "checkConnection.php"?>
         

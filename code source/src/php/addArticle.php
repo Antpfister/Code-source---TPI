@@ -8,10 +8,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href="../../resources/css/style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title>Ajout article - Gestion de prêt entre voisins</title>
     </head>
     <body>
+    <?php $actif = 0?>
         <?php
             include "menu.php";
             include "checkConnection.php";

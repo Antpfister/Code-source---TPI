@@ -66,7 +66,15 @@
         $artstatus = $article['artStatus'];
     }
 
+<<<<<<< Updated upstream
     if($error == 0){
+=======
+    if($empty == 4){
+        echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'">';
+    }
+    elseif ($error == 0){
+        echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'">';
+>>>>>>> Stashed changes
         if(!empty($imageTmp)){
             // enregistre l'image et le pdf
             move_uploaded_file($imageTmp, $imagelocation);
@@ -79,6 +87,11 @@
         echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'" >';
     }
     else{
+<<<<<<< Updated upstream
         echo '<meta http-equiv="refresh" content="0, URL=modifArticle.php?error=1&id='.$idArticle.'>';
+=======
+        
+        echo '<meta http-equiv="refresh" content="0, URL=modifArticle.php?error=1&id='.$idArticle.'">';
+>>>>>>> Stashed changes
     }
 ?>

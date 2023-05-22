@@ -9,10 +9,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../../resources/css/style.css">
+        <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title id="title">Liste article - Gestion de prêt entre voisins</title>
     </head>
     <body>
+        <?php $actif = 2?>
         <?php include "menu.php"?>
         <?php include "checkConnection.php"?>
         <div class="TitleListeArticle">
@@ -25,15 +26,39 @@
         </div>
         <br>
         <br>
+<<<<<<< Updated upstream
         <div class="connListeArticle">
             <?php
             $connector = new Database();
             //$cats = $connector->getAllCategory();
             $articles = $connector->getAllArticlesAndInfos();
             $connector = null;
+=======
+        <form action = "checkRecherchebarre.php" method = "get">
+            <input type = "search" name = "terme">
+            <input type = "submit" name = "btn" value = "Rechercher">
+        </form>
+        <?php if(isset($_GET['Result'])){
+            echo $_GET['Result'];
+        } ?>
+        <div class="errMessage">
+            <?php  if (isset($_GET['error'])) {
 
-            foreach ($articles as $article) {
-            ?>
+             ?>
+            <p>Vous n'avez rien mis dans la barre de recherche !! s'il vous plaie recommencer.</p>
+            <?php }?>
+        </div>
+        <br>
+        <br>
+        <?php
+        $connector = new Database();
+        $articles = $connector->getAllArticlesAndInfos();
+        $connector = null;
+>>>>>>> Stashed changes
+
+        foreach ($articles as $article) {
+        ?>
+        <div class="connListeArticle">
             <div class="imgarticle">
                 <a class="imglien" href="article.php?id=<?= $article["idArticle"] ?>">
                 <img class="imgarticle" src="../../resources/images/<?= $article["artPicture"] ?>" alt="">
@@ -58,10 +83,10 @@
             </div>
             <br>
             <br>
+        </div>
             <?php 
             }
             ?>
-        </div>
         <br>
         <br>
         <?php include 'footer.php' ?>

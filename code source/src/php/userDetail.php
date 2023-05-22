@@ -11,11 +11,12 @@
         <!-- Tag meta -->
         <meta charset="utf-8">
         <!-- CSS -->
-        <link rel="stylesheet" href="../../resources/css/style.css">
+        <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title id="title">Profil - Gestion de prêt entre voisins</title>
         
     </head>
     <body>
+    <?php $actif = 4?>
         <?php include "menu.php" ?>
         <?php include "checkConnection.php" ?>
         <?php

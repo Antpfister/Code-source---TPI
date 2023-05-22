@@ -9,13 +9,14 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../../resources/css/style.css">
+        <link rel="stylesheet" href="../../resources/CSS/style.css?v=<?php echo time(); ?>">
         <title id="title">Home - Gestion de prêt entre voisins</title>
     </head>
     <body>
+        <?php $actif = 1?>
         <?php include "menu.php"?>
         <div class="title">
-            <h1>Page Home</h1>
+            <h1>Gestion de prêt entre voisins</h1>
         </div>
         <div class="image_accueil">
             <img src="../../resources/images/img_accueil.jpg" >
