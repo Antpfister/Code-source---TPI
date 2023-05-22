@@ -28,12 +28,12 @@
         
 
         $connector = new Database();
-        $barrResult= $connector->searchlocal($barrRecherche);
+        $barrResults= $connector->searchlocal($barrRecherche);
         $connector = null;
-        
-        echo var_dump($barrResult);
 
-        ///echo '<meta http-equiv="refresh" content="0, URL=articleListe.php?Result='. $barrResult['idUser'] .'">';
+        $_SESSION['Result'] =$barrResults; 
+
+        echo '<meta http-equiv="refresh" content="0, URL=articleListe.php">';
     }
     else{
         echo '<meta http-equiv="refresh" content="0, URL=articleListe.php?error=1">';

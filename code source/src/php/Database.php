@@ -203,7 +203,9 @@ class Database {
         return $result;
     }
     public function getArticle($id){
-        $query = 'SELECT * FROM t_article WHERE idArticle = :id';
+        $query = 'SELECT * FROM t_article
+        INNER JOIN t_user ON t_article.idUser = t_user.idUser
+        WHERE idArticle = :id';
 
         $binds = array(
             0 => array(
@@ -294,24 +296,15 @@ class Database {
     }
 
     public function searchlocal($barrRecherche){
-        $query = 'SELECT idArticle FROM t_article
+        $req = $this->querySimpleExecute('SELECT idArticle FROM t_article
         INNER JOIN t_user ON t_article.idUser = t_user.idUser
-        WHERE useLocal = :barrRecherche';
+        WHERE useLocal LIKE "%'.$barrRecherche.'%"');
 
-        $binds = array(
-            0 => array(
-                'marker' => 'barrRecherche',
-                'value'  => $barrRecherche,
-                'type'   => PDO::PARAM_STR
-            )
-        );
-
-        $req = $this->queryPrepareExecuteArray($query, $binds);
         $result = $this->formatData($req);
 
         $this->unsetData($req);
 
-        return $result[0];
+        return $result;
     }
     public function UpdateNbLoanUser($id,$NbLoan){
         $query = "UPDATE t_user SET useNbLoan = :NbLoan WHERE idUser = :id";

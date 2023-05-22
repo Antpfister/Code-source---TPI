@@ -2,7 +2,7 @@
 /// ETML
 /// Auteur : Anthony Pfister
 /// Date : 15.05.2023
-/// Description : page  de liste des articles du site enregistrer avec une barre de rechecher qui trie la liste en fonction du lieu rechercher 
+/// Description : page  de liste des articles du site enregistrer avec une barre de rechecher qui trie la liste en fonction du lieu recherché
 -->
 
 <!DOCTYPE html>
@@ -30,9 +30,6 @@
             <input type = "search" name = "terme">
             <input type = "submit" name = "btn" value = "Rechercher">
         </form>
-        <?php if(isset($_GET['Result'])){
-            echo $_GET['Result'];
-        } ?>
         <div class="errMessage">
             <?php  if (isset($_GET['error'])) {
 
@@ -43,40 +40,84 @@
         <br>
         <br>
         <?php
-        $connector = new Database();
-        $articles = $connector->getAllArticlesAndInfos();
-        $connector = null;
+        
+        if(isset($_SESSION['Result'])){
+        
+        $Results = $_SESSION['Result'];
 
-        foreach ($articles as $article) {
-        ?>
-        <div class="connListeArticle">
-            <div class="imgarticle">
-                <a class="imglien" href="article.php?id=<?= $article["idArticle"] ?>">
-                <img class="imgarticle" src="../../resources/images/<?= $article["artPicture"] ?>" alt="">
-                </a>
+        foreach ($Results as $Result) {
+
+            $connector = new Database();
+            $ResArticle = $connector->getArticle($Result['idArticle']);
+            $connector = null;
+
+            ?>
+            <div class="connListeArticle">
+                <div class="imgarticle">
+                    <a class="imglien" href="article.php?id=<?= $ResArticle["idArticle"] ?>">
+                    <img class="imgarticle" src="../../resources/images/<?= $ResArticle["artPicture"] ?>" alt="">
+                    </a>
+                </div>
+                <div class="infoarticles">
+                    <strong><?= $ResArticle['artName'] ?></strong>
+                    <?php 
+                    if($ResArticle['artStatus'] == 1){
+                    ?>
+                        <h3 class="disponible">Disponible</h3>
+                    
+                    <?php
+                    }else{
+                    ?>
+                        <h3 class="emprunter">Emprunter</h3>
+                    <?php
+                    }
+                    ?>
+                    <p><?= $ResArticle['artDescription'] ?></p>
+                    <h3><?= 'Créer par '.$ResArticle['useName'] . ', se situe à ' . $ResArticle['useLocal'] ?></h3>
+                </div>
+                <br>
+                <br>
             </div>
-            <div class="infoarticles">
-                <strong><?= $article['artName'] ?></strong>
-                <?php 
-                if($article['artStatus'] == 1){
-                ?>
-                    <h3 class="disponible">Disponible</h3>
-                
-                <?php
-                }else{
-                ?>
-                    <h3 class="emprunter">Emprunter</h3>
-                <?php
-                }
-                ?>
-                <p><?= $article['artDescription'] ?></p>
-                <h3><?= 'Créer par '.$article['useName'] . ', se situe à ' . $article['useLocal'] ?></h3>
+            <?php 
+            unset($_SESSION['Result']);
+        }
+        } 
+        else {
+            $connector = new Database();
+            $articles = $connector->getAllArticlesAndInfos();
+            $connector = null;    
+            
+            foreach ($articles as $article) {
+            ?>
+            <div class="connListeArticle">
+                <div class="imgarticle">
+                    <a class="imglien" href="article.php?id=<?= $article["idArticle"] ?>">
+                    <img class="imgarticle" src="../../resources/images/<?= $article["artPicture"] ?>" alt="">
+                    </a>
+                </div>
+                <div class="infoarticles">
+                    <strong><?= $article['artName'] ?></strong>
+                    <?php 
+                    if($article['artStatus'] == 1){
+                    ?>
+                        <h3 class="disponible">Disponible</h3>
+                    
+                    <?php
+                    }else{
+                    ?>
+                        <h3 class="emprunter">Emprunter</h3>
+                    <?php
+                    }
+                    ?>
+                    <p><?= $article['artDescription'] ?></p>
+                    <h3><?= 'Créer par '.$article['useName'] . ', se situe à ' . $article['useLocal'] ?></h3>
+                </div>
+                <br>
+                <br>
             </div>
-            <br>
-            <br>
-        </div>
             <?php 
             }
+        }
             ?>
         <br>
         <br>
