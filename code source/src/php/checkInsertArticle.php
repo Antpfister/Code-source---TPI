@@ -26,9 +26,11 @@
         
         
         if($imageType == "image/jpeg"){
+            date_default_timezone_set('Europe/Paris');
+            
+            $artimage = date('d-m-y_h:i:s'). $_FILES['image']['name'] ;
+            $imageDestination = '../../resources/images/' . $artimage;
 
-            $artimage = $_FILES['image']['name'] ;
-            $iamgeDestination = '../../resources/images/' . $artimage;
 
             if ($_FILES['image']['error'] == 0) {
             }
@@ -62,7 +64,7 @@
 
     if($error == 0){
         // enregistre l'image et le pdf
-        move_uploaded_file($imageTmp, $iamgeDestination);
+        move_uploaded_file($imageTmp, $imageDestination);
 
         $connector = new Database();
         $connector->insertArticle($artName,$artstatus,$artimage,$artdescription,$artuser);

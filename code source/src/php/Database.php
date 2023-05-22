@@ -51,6 +51,22 @@ class Database {
 
         return $req;
     }
+    private function queryPrepareExecuteArray($query, $binds){
+        $req = $this->connector->prepare($query, $binds);
+
+        if (!empty($binds)) {
+            foreach ($binds as $bind) {
+                $req->bindValue($bind["marker"], $bind["value"], $bind["type"]);
+            }
+        }
+        
+        $req->execute();
+        $result = $req->mysqli_stmt_get_result();
+
+
+        return $result;
+    }
+
 
     /**
      * Retoune les données de la requête sont forme de tableau associatif
@@ -245,6 +261,28 @@ class Database {
 
         $this->unsetData($req);
     }
+
+    public function searchlocal($barrRecherche){
+        $query = 'SELECT idArticle FROM t_article
+        INNER JOIN t_user ON t_article.idUser = t_user.idUser
+        WHERE useLocal = :barrRecherche';
+
+        $binds = array(
+            0 => array(
+                'marker' => 'barrRecherche',
+                'value'  => $barrRecherche,
+                'type'   => PDO::PARAM_STR
+            )
+        );
+
+        $req = $this->queryPrepareExecuteArray($query, $binds);
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+        return $result[0];
+    }
+    
 } 
 
 ?>

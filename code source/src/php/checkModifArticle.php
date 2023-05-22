@@ -9,6 +9,7 @@
     session_start();
 
     $error = 0;
+    $empty = 0;
     $idArticle = $_POST['id'];
 
     $connector = new Database();
@@ -21,6 +22,7 @@
     }
     else{
         $artName = $article['artName'];
+        $empty++;
     }
     
     if(!empty($_FILES['image']['name']))
@@ -30,8 +32,9 @@
         
         
         if($imageType == "image/jpeg"){
-
-            $artimage = $_FILES['image']['name'] ;
+            date_default_timezone_set('Europe/Paris');
+            
+            $artimage = date('d-m-y_h:i:s'). $_FILES['image']['name'] ;
             $imageDestination = '../../resources/images/' . $artimage;
             
             $imagelocation = '../../resources/images/' . $article['artPicture'];
@@ -40,15 +43,16 @@
             if ($_FILES['image']['error'] == 0) {
             }
             else{
-                $error =+ 1;
+                $error++;
             }
         }
         else{
-            $error =+ 1;
+            $error++;
         }
     }
     else{
         $artimage = $article['artPicture'];
+        $empty++;
     }
 
     if(!empty($_POST['description'])){
@@ -57,6 +61,7 @@
     }
     else{
         $artdescription = $article['artDescription'];
+        $empty++;
     }
 
     if($_POST['status'] != $article['artStatus']){
@@ -64,17 +69,14 @@
     }
     else{
         $artstatus = $article['artStatus'];
+        $empty++;
     }
 
-<<<<<<< Updated upstream
-    if($error == 0){
-=======
     if($empty == 4){
         echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'">';
     }
     elseif ($error == 0){
         echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'">';
->>>>>>> Stashed changes
         if(!empty($imageTmp)){
             // enregistre l'image et le pdf
             move_uploaded_file($imageTmp, $imagelocation);
@@ -87,11 +89,7 @@
         echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'" >';
     }
     else{
-<<<<<<< Updated upstream
-        echo '<meta http-equiv="refresh" content="0, URL=modifArticle.php?error=1&id='.$idArticle.'>';
-=======
         
         echo '<meta http-equiv="refresh" content="0, URL=modifArticle.php?error=1&id='.$idArticle.'">';
->>>>>>> Stashed changes
     }
 ?>

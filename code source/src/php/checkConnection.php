@@ -10,7 +10,7 @@
     $checkName = $connector->getUserName($_SESSION["userName"]);
     $connector = null;
 
-    if ($_SESSION["isConnected"] == 0) {
+    if ($_SESSION["isConnected"] == 0 || $_SESSION["isConnected"] == null) {
         echo '<meta http-equiv="refresh" content="0, URL=login.php">';
     }
 

@@ -26,14 +26,6 @@
         </div>
         <br>
         <br>
-<<<<<<< Updated upstream
-        <div class="connListeArticle">
-            <?php
-            $connector = new Database();
-            //$cats = $connector->getAllCategory();
-            $articles = $connector->getAllArticlesAndInfos();
-            $connector = null;
-=======
         <form action = "checkRecherchebarre.php" method = "get">
             <input type = "search" name = "terme">
             <input type = "submit" name = "btn" value = "Rechercher">
@@ -54,7 +46,6 @@
         $connector = new Database();
         $articles = $connector->getAllArticlesAndInfos();
         $connector = null;
->>>>>>> Stashed changes
 
         foreach ($articles as $article) {
         ?>

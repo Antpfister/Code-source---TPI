@@ -36,12 +36,8 @@ session_start();
         <?php }?>
     </div>
     <?php 
-<<<<<<< Updated upstream
-    if ($_SESSION["isConnected"] == 0) {
-=======
-    if (isset($_SESSION["isConnected"])) {
+    if (!isset($_SESSION["isConnected"])) {
        
->>>>>>> Stashed changes
     ?>
     <div class="navlogin">
     <?php if ($actif == 3) { ?>
