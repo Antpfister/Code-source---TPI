@@ -7,6 +7,7 @@
 <?php 
 
     include "Database.php";
+    session_start();
     
     $error = 0;
 
@@ -28,14 +29,27 @@
 
 
     if($error == 0){
-    
-    $connector = new Database();
-    $connector->suppArticle($idArticle);
-    $connector = null;
+        $idUser = $_SESSION['idUser'];
 
-    unlink($imagelocation);    
-        
+        $connector = new Database();
+        $user = $connector->getUser($idUser);
+        $connector = null;
+
+        $NbArticles =$user['useNbArticles'];
+        $NbArticles--;
+
+        $connector = new Database();
+        $connector->suppArticle($idArticle);
+        $connector = null;
+
+        $connector = new Database();
+        $connector->UpdateNbArticleUser($user['idUser'],$NbArticles);
+        $connector = null;
+
+        unlink($imagelocation);    
+            
         echo '<meta http-equiv="refresh" content="0, URL=articleListe.php">';
+        
     }else {
         
         echo '';

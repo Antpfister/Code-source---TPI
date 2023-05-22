@@ -28,7 +28,7 @@
         if($imageType == "image/jpeg"){
             date_default_timezone_set('Europe/Paris');
             
-            $artimage = date('d-m-y_h:i:s'). $_FILES['image']['name'] ;
+            $artimage = date('d-m-y_h.i.s'). $_FILES['image']['name'] ;
             $imageDestination = '../../resources/images/' . $artimage;
 
 
@@ -65,12 +65,23 @@
     if($error == 0){
         // enregistre l'image et le pdf
         move_uploaded_file($imageTmp, $imageDestination);
+        $connector = new Database();
+        $user = $connector->getUser($_SESSION["idUser"]);
+        $connector = null;
+
+        $NbArticles =$user['useNbArticles'];
+        $NbArticles++;
 
         $connector = new Database();
         $connector->insertArticle($artName,$artstatus,$artimage,$artdescription,$artuser);
         $connector = null;
 
-        echo '<meta http-equiv="refresh" content="0, URL=home.php">';
+        $connector = new Database();
+        $connector->UpdateNbArticleUser($artuser,$NbArticles);
+        $connector = null;
+
+
+        echo '<meta http-equiv="refresh" content="0, URL=articleListe.php">';
     }
     else{
         echo '<meta http-equiv="refresh" content="0, URL=addArticle.php?error=1">';

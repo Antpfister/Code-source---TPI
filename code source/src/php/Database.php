@@ -162,6 +162,37 @@ class Database {
 
         $this->unsetData($req);
     }
+    public function insertLoan($emprDateBegin,$emprDateEnd,$idArticle,$idUser) {
+        $query = "INSERT INTO t_loan(loaBeginDate,loaEndDate,idArticle,idUser) 
+        VALUES(:emprDateBegin,:emprDateEnd,:idArticle,:idUser)";
+
+        $binds = array(
+            0 => array(
+                'marker' => 'emprDateBegin',
+                'value'  => $emprDateBegin,
+                'type'   => PDO::PARAM_STR
+            ),
+            1 => array(
+                'marker' => 'emprDateEnd',
+                'value'  => $emprDateEnd,
+                'type'   => PDO::PARAM_STR
+            ),
+            2 => array(
+                'marker' => 'idArticle',
+                'value'  => $idArticle,
+                'type'   => PDO::PARAM_INT
+            ),
+            3 => array(
+                'marker' => 'idUser',
+                'value'  => $idUser,
+                'type'   => PDO::PARAM_INT
+            ),
+        );
+
+        $req = $this->queryPrepareExecute($query, $binds);
+
+        $this->unsetData($req);
+    }
     public function getAllArticlesAndInfos(){
         $req = $this->querySimpleExecute('SELECT * FROM t_article
         INNER JOIN t_user ON t_article.idUser = t_user.idUser');
@@ -282,7 +313,67 @@ class Database {
 
         return $result[0];
     }
-    
+    public function UpdateNbLoanUser($id,$NbLoan){
+        $query = "UPDATE t_user SET useNbLoan = :NbLoan WHERE idUser = :id";
+
+        $binds = array(
+            0 => array(
+                'marker' => 'id',
+                'value'  => $id,
+                'type'   => PDO::PARAM_INT
+            ),
+            1 => array(
+                'marker' => 'NbLoan',
+                'value'  => $NbLoan,
+                'type'   => PDO::PARAM_INT
+            ),
+        );
+            
+        $req = $this->queryPrepareExecute($query,$binds);
+
+        $this->unsetData($req);
+    }
+    public function UpdateStatusArticle($id,$artstatus){
+        $query = "UPDATE t_article SET artStatus = :artstatus WHERE idArticle = :id";
+
+        $binds = array(
+            0 => array(
+                'marker' => 'id',
+                'value'  => $id,
+                'type'   => PDO::PARAM_INT
+            ),
+            1 => array(
+                'marker' => 'artstatus',
+                'value'  => $artstatus,
+                'type'   => PDO::PARAM_INT
+            ),
+        );
+            
+        $req = $this->queryPrepareExecute($query,$binds);
+
+        $this->unsetData($req);
+    }
+    public function UpdateNbArticleUser($id,$NbArticles){
+        $query = "UPDATE t_user SET useNbArticles = :NbArticles WHERE idUser = :id";
+
+        $binds = array(
+            0 => array(
+                'marker' => 'id',
+                'value'  => $id,
+                'type'   => PDO::PARAM_INT
+            ),
+            1 => array(
+                'marker' => 'NbArticles',
+                'value'  => $NbArticles,
+                'type'   => PDO::PARAM_INT
+            ),
+        );
+            
+        $req = $this->queryPrepareExecute($query,$binds);
+
+        $this->unsetData($req);
+    }
+
 } 
 
 ?>

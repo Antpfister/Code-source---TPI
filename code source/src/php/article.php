@@ -26,7 +26,7 @@
             $user = $connector->getUser($article["idUser"]);
             $connector = null;
         ?>
-        <div class="TitleListeArticle">
+        <div class="TitleArticle">
             <h1>Article info - <?= $article['artName'] ?></h1>
         </div>
         <div class="errMessage">
@@ -64,14 +64,24 @@
                 <input type="submit" value="Supprimer l'article">
             </form>
         </div>
+        <br>
+
         <div class="btnModifArticle">
             <form action='modifArticle.php' method='get'>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
-                <input type="submit" value="Modifier cette article">
+                <input type="submit" value="Modifier l'article">
             </form>
         </div>
         <br>
+
+        <div class="btnEmprArticle">
+            <form action='empruntArticle.php' method='get'>
+                <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
+                <input type="submit" value="Emprunter l'article">
+            </form>
+        </div>
         <br>
+
         <?php include 'footer.php' ?>
     </body>
 </html>
