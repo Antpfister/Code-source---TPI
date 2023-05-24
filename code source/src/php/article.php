@@ -57,6 +57,8 @@
         </div>
         <br>
         <br>
+        <?php if($_SESSION["idUser"] == $article["idUser"]) {
+            ?>
         <div class="btnSuppArticle">
             <form action='suppArticle.php' method='get'>
                 <input type='hidden' name="picture" value='<?php echo $article["artPicture"]; ?>'>
@@ -65,7 +67,7 @@
             </form>
         </div>
         <br>
-
+        
         <div class="btnModifArticle">
             <form action='modifArticle.php' method='get'>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
@@ -73,7 +75,7 @@
             </form>
         </div>
         <br>
-
+        <?php }?>
         <div class="btnEmprArticle">
             <form action='empruntArticle.php' method='get'>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>

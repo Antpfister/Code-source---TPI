@@ -16,6 +16,10 @@
     $article=$connector->getArticle($idArticle);
     $connector = null;
 
+    $connector = new Database();
+    $user = $connector->getUser($_SESSION["idUser"]);
+    $connector = null;
+
     if(!empty($_POST['Name'])){
         $artName = $_POST['Name'];
         
@@ -29,7 +33,9 @@
     {
         $imageTmp = $_FILES['image']['tmp_name'];
         $imageType = $_FILES['image']['type'];
-        
+        $imagelocation = '../../resources/images/' . $article['artPicture'];
+
+        unlink($imagelocation);  
         
         if($imageType == "image/jpeg"){
             date_default_timezone_set('Europe/Paris');
@@ -37,9 +43,6 @@
             $artimage = date('d-m-y_h:i:s'). $_FILES['image']['name'] ;
             $imageDestination = '../../resources/images/' . $artimage;
             
-            $imagelocation = '../../resources/images/' . $article['artPicture'];
-
-            unlink($imagelocation);   
             if ($_FILES['image']['error'] == 0) {
             }
             else{
@@ -66,6 +69,20 @@
 
     if($_POST['status'] != $article['artStatus']){
         $artstatus = $_POST['status'];
+        if($artstatus == 1){
+
+            $NbLoan =$user['useNbLoan'];
+
+            if($NbLoan != 0){
+                $NbLoan--;
+                $connector = new Database();
+                $connector->suppLoan($idArticle);
+                $connector = null;
+                $connector = new Database();
+                $connector->UpdateNbLoanUser($user["idUser"],$NbLoan);
+                $connector = null;
+            }
+        }
     }
     else{
         $artstatus = $article['artStatus'];
@@ -76,11 +93,12 @@
         echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'">';
     }
     elseif ($error == 0){
-        echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'">';
+        
         if(!empty($imageTmp)){
             // enregistre l'image et le pdf
             move_uploaded_file($imageTmp, $imagelocation);
         }
+        
 
         $connector = new Database();
         $connector->userModifArticle($idArticle,$artName,$artstatus,$artimage,$artdescription);
@@ -89,7 +107,6 @@
         echo '<meta http-equiv="refresh" content="0, URL=article.php?id='.$idArticle.'" >';
     }
     else{
-        
         echo '<meta http-equiv="refresh" content="0, URL=modifArticle.php?error=1&id='.$idArticle.'">';
     }
 ?>

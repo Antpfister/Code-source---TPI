@@ -2,7 +2,7 @@
 /// ETML
 /// Auteur : Anthony Pfister
 /// Date : 15.05.2023
-/// Description : supprime l'article et retourne l'utilisateur sur la page de liste des articles 
+/// Description : supprime l'empunt d'un article et retourne l'utilisateur sur la page profil
 -->
 <?php 
 
@@ -19,13 +19,6 @@
         $error =+ 1;
     }
 
-    if (isset($_GET["picture"])) {
-        $artPicture =$_GET["picture"];
-        $imagelocation = '../../resources/images/' . $artPicture;
-    }
-    if (empty($artPicture)) {
-        $error =+ 1;
-    }
 
 
     if($error == 0){
@@ -33,13 +26,6 @@
 
         $connector = new Database();
         $user = $connector->getUser($idUser);
-        $connector = null;
-
-        $NbArticles =$user['useNbArticles'];
-        $NbArticles--;
-
-        $connector = new Database();
-        $connector->suppArticle($idArticle);
         $connector = null;
         
         $NbLoan =$user['useNbLoan'];
@@ -52,15 +38,12 @@
             $connector->UpdateNbLoanUser($user['idUser'],$NbLoan);
             $connector = null;
         }
-
+        
         $connector = new Database();
-        $connector->UpdateNbArticleUser($user['idUser'],$NbArticles);
+        $connector->UpdateStatusArticle($idArticle,1);
         $connector = null;
-
-
-        unlink($imagelocation);    
             
-        echo '<meta http-equiv="refresh" content="0, URL=articleListe.php">';
+        echo '<meta http-equiv="refresh" content="0, URL=userDetail.php">';
         
     }else {
         

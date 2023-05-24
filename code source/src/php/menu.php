@@ -36,7 +36,7 @@ session_start();
         <?php }?>
     </div>
     <?php 
-    if (!isset($_SESSION["isConnected"])) {
+    if (!isset($_SESSION["isConnected"]) || $_SESSION["isConnected"] == 0) {
        
     ?>
     <div class="navlogin">

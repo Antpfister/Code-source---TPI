@@ -162,9 +162,9 @@ class Database {
 
         $this->unsetData($req);
     }
-    public function insertLoan($emprDateBegin,$emprDateEnd,$idArticle,$idUser) {
-        $query = "INSERT INTO t_loan(loaBeginDate,loaEndDate,idArticle,idUser) 
-        VALUES(:emprDateBegin,:emprDateEnd,:idArticle,:idUser)";
+    public function insertLoan($emprDateBegin,$emprDateEnd,$FKArticle,$FKUser) {
+        $query = "INSERT INTO t_loan(loaBeginDate,loaEndDate,FKArticle,FKUser) 
+        VALUES(:emprDateBegin,:emprDateEnd,:FKArticle,:FKUser)";
 
         $binds = array(
             0 => array(
@@ -178,13 +178,13 @@ class Database {
                 'type'   => PDO::PARAM_STR
             ),
             2 => array(
-                'marker' => 'idArticle',
-                'value'  => $idArticle,
+                'marker' => 'FKArticle',
+                'value'  => $FKArticle,
                 'type'   => PDO::PARAM_INT
             ),
             3 => array(
-                'marker' => 'idUser',
-                'value'  => $idUser,
+                'marker' => 'FKUser',
+                'value'  => $FKUser,
                 'type'   => PDO::PARAM_INT
             ),
         );
@@ -196,6 +196,16 @@ class Database {
     public function getAllArticlesAndInfos(){
         $req = $this->querySimpleExecute('SELECT * FROM t_article
         INNER JOIN t_user ON t_article.idUser = t_user.idUser');
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+        return $result;
+    }
+    public function getAllLoansAndInfos(){
+        $req = $this->querySimpleExecute('SELECT * FROM t_loan
+        INNER JOIN t_user ON t_loan.FKUser = t_user.idUser
+        INNER JOIN t_article ON t_loan.FKArticle = t_article.idArticle');
         $result = $this->formatData($req);
 
         $this->unsetData($req);
@@ -248,6 +258,24 @@ class Database {
             0 => array(
                 'marker' => 'idArticle',
                 'value'  => $idArticle,
+                'type'   => PDO::PARAM_INT
+            )
+        );
+
+        $req = $this->queryPrepareExecute($query, $binds);
+        $result = $this->formatData($req);
+
+        $this->unsetData($req);
+
+
+    }
+    public function suppLoan($FKArticle){
+        $query = 'DELETE FROM `t_loan` WHERE `FKArticle` = :FKArticle';
+
+        $binds = array(
+            0 => array(
+                'marker' => 'FKArticle',
+                'value'  => $FKArticle,
                 'type'   => PDO::PARAM_INT
             )
         );
@@ -366,6 +394,7 @@ class Database {
 
         $this->unsetData($req);
     }
+    
 
 } 
 

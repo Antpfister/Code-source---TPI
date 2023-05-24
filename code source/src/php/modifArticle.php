@@ -47,11 +47,13 @@
                 <textarea name="description" class="AddLabel" id="description" placeholder="<?= $article['artDescription'] ?>"></textarea>
                 <br>
                 <br>
+                
                 <label for="status">Le status de l'article :</label>
-                <input type="radio" id="disponible" name="status" value="1"checked>
+                <input type="radio" id="disponible" name="status" value="1">
                 <label for="huey">disponible</label>
                 <input type="radio" id="indisponible" name="status" value="0">
                 <label for="huey">indisponible</label>
+                
                 <br>
                 <br>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>

@@ -32,7 +32,7 @@
         </div>
         <div class="errMessage">
             <?php  if (isset($_GET['error'])) {
-                if ($_SESSION["isConnected"] == 1) {
+                if (isset($_SESSION["isConnected"])) {
                     $_SESSION["isConnected"] = 0;
                     $_SESSION["userName"] = "";
                 }

@@ -94,11 +94,7 @@ body{
 0px 6px 8px 0px rgba(0,0,0,0.11),
 0px 8px 16px 0px rgba(0,0,0,0.11);
 }
-.imgarticle{
-    width: 300px;
-    height: 300px;
-    float: left;
-}
+
 .btnAddArticle{
     float: right;
 }
@@ -107,7 +103,7 @@ body{
     width: 90%;
     height: 300px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     padding: 2%;
     background-color: rgba(255, 255, 255, 1);
     color: #000;
@@ -117,6 +113,25 @@ body{
 0px 4px 4px 0px rgba(0,0,0,0.11),
 0px 6px 8px 0px rgba(0,0,0,0.11),
 0px 8px 16px 0px rgba(0,0,0,0.11);
+}
+.infoUser{
+    float: center;
+    width: 90%;
+    height: max-content;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.11),
+0px 2px 2px 0px rgba(0,0,0,0.11),
+0px 4px 4px 0px rgba(0,0,0,0.11),
+0px 6px 8px 0px rgba(0,0,0,0.11),
+0px 8px 16px 0px rgba(0,0,0,0.11);
+
 }
 .imgarticle{
     width: 300px;
@@ -158,6 +173,46 @@ body{
 0px 4px 4px 0px rgba(0,0,0,0.11),
 0px 6px 8px 0px rgba(0,0,0,0.11),
 0px 8px 16px 0px rgba(0,0,0,0.11);
+}
+.userEmprlist{
+    float: center;
+    width: 90%;
+    height: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.11),
+0px 2px 2px 0px rgba(0,0,0,0.11),
+0px 4px 4px 0px rgba(0,0,0,0.11),
+0px 6px 8px 0px rgba(0,0,0,0.11),
+0px 8px 16px 0px rgba(0,0,0,0.11);
+}
+
+.userEmprlist .infoarticles{
+    
+    width: 100%;
+
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 2%;
+    color: #000;
+
+}
+.userEmprlist .userEmprlistconn{
+    float:left;
+    width: 15%;
+    margin-left: 50px;
+    height: max-content;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 2%;
+    color: #000;
+
 }
 .connContainer{
     float: center;
