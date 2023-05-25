@@ -33,6 +33,9 @@
         $connector = new Database();
         $Emprunts = $connector->getAllLoansAndInfos();
         $connector = null;  
+
+        date_default_timezone_set('Europe/Paris');
+        $curDate = date('d.m.Y');
         ?>
             
         <?php echo "<h1>Détails de l'utilisateur ".$user['useName']."</h1>"?>
@@ -41,6 +44,9 @@
         </form>
         <br>
         <br>
+        <div id="notifMessage" class="notifMessage">
+            <p>Il reste moins de 2 jours avant la fin d'un emprunt !!!</p>
+        </div>
         <div class="infoUser">
             <h4>Créer le <?= $user["useRegisterDate"] ?></h4>
             <p>Localisation : <?= $user["useLocal"] ?></p>
@@ -48,11 +54,34 @@
             <p>Nombre d'emprunt que l'utilisateur à actuellement :  <?= $user["useNbLoan"] ?></p>
         </div>
         <div class="userEmprlist">
-        <h2>liste d'article Emprunter</h2>
+        <h2>Liste des articles Emprunter actuellement :</h2>
             <?php    
                 foreach ($Emprunts as $Emprunt) {
+                    $Emprunt['loaBeginDate'] = date('d.m.Y',strtotime($Emprunt['loaBeginDate']));
+                    $Emprunt['loaEndDate'] = date('d.m.Y',strtotime($Emprunt['loaEndDate']));
                     if($Emprunt['FKUser'] == $_SESSION['idUser']){
                         
+                        $limiteDate = date('d.m.Y', strtotime($Emprunt['loaEndDate']."-2 day"));
+                        
+                        if ($limiteDate < $curDate ){
+                            if($Emprunt['loaEndDate'] == $curDate){
+                                echo 'va être suprimer :)'. $Emprunt['artName'].$Emprunt['loaEndDate'];
+                                //echo '<meta http-equiv="refresh" content="0, URL=suppEmprunt.php?id='.$Emprunt["FKArticle"].'" >';
+                            }
+                            echo 'reste que deux jour à '. $Emprunt['artName'].$limiteDate.$Emprunt['loaEndDate'];
+
+                            ?><script>
+                                function activerConteneur() {
+                                    var conteneur = document.getElementById('notifMessage');
+                                    conteneur.style.display = 'block';
+                                }
+                                activerConteneur();
+                            </script>
+                            <?php
+                        }
+                        else{
+                            echo 'rien a notifier ';
+                        }
             ?>
                     <div class="userEmprlistconn">
                         <div class="imgarticle">
@@ -62,7 +91,7 @@
                         </div>
                         <div class="infoarticles">
                             <strong><?= $Emprunt['artName'] ?></strong>
-                            <p>Du <?= $Emprunt['loaBeginDate'] ?> jusqu'au <?= $Emprunt['loaEndDate'] ?>.</p>
+                            <p>Du <?= $Emprunt['loaBeginDate'] ?> jusqu'au <?= $Emprunt['loaEndDate']?>.</p>
                         </div>
                         <div class="btnSuppArticle">
                             <form action='suppEmprunt.php' method='get'>
@@ -82,7 +111,7 @@
         <br>
         <br>
         <div class="userEmprlist">
-            <h2>liste de article créer</h2>
+            <h2>Liste des articles créer :</h2>
             <?php    
                 foreach ($articles as $article) {
                     if($article['idUser'] == $_SESSION['idUser']){

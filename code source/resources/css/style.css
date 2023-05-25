@@ -214,6 +214,9 @@ body{
     color: #000;
 
 }
+.notifMessage{
+    display: none;
+}
 .connContainer{
     float: center;
     width: 30%;

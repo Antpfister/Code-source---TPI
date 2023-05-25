@@ -10,13 +10,13 @@
 
     $error = 0;
     $idArticle = $_POST['id'];
-    function isValid($date, $format = 'Y-m-d'){
+    function isValid($date, $format = 'd.m.Y'){
         $dt = DateTime::createFromFormat($format, $date);
         return $dt && $dt->format($format) === $date;
     }  
 
         
-    if(isValid($_POST['DateBegin'])){
+    if(isset($_POST['DateBegin'])){
         $emprDateBegin = $_POST['DateBegin'];
     }
     else{
@@ -24,7 +24,7 @@
     }
 
         
-    if(isValid($_POST['DateEnd'])){
+    if(isset($_POST['DateEnd'])){
         $emprDateEnd = $_POST['DateEnd'];
     }
     else{
