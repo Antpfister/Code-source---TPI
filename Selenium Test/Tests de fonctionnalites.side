@@ -1,0 +1,176 @@
+{
+  "id": "7a002ca9-e37b-4a97-90ee-09112e67ff5e",
+  "version": "2.0",
+  "name": "Tests de fonctionnalitées",
+  "url": "http://localhost",
+  "tests": [{
+    "id": "94059ef4-acf2-4fd1-aeaa-f2365d1013cc",
+    "name": "Test 1 : Ajout article",
+    "commands": [{
+      "id": "d2694e83-994b-4e3e-92b7-04ac97b4e94d",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "efa78b85-c17a-4e71-b6f4-23c17dfba0dd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cfc1152e-c675-4465-ab8a-3986d093f1a0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ebce1e6-57a9-472b-af85-966f2cb014bd",
+      "comment": "",
+      "command": "click",
+      "target": "id=send",
+      "targets": [
+        ["id=send", "id"],
+        ["css=#send", "css:finder"],
+        ["xpath=//button[@id='send']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter un article')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63526648-5a1a-41cd-8bda-fcb613dffd59",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de6f8f30-96d0-45da-ae57-b1b19faab898",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "moto"
+    }, {
+      "id": "74160f9b-b88f-4146-96f3-05d0d7454ab6",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//form[@action='checkInsertArticle.php']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85baa0aa-097d-4f0d-8bf9-a430de2ac97b",
+      "comment": "",
+      "command": "click",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbd4e5a0-fda1-4887-971f-63688bed1c00",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "D:\\4ème année\\TPI\\Documentation\\dépot image\\moto.jpg"
+    }, {
+      "id": "fb998cad-babf-4253-9e46-b2d1c66ea16d",
+      "comment": "",
+      "command": "click",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39d9d79d-c6b7-46c0-bf1b-702e85ab7d61",
+      "comment": "",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "C'est un article de test pour voir le bon fonctionnement du site."
+    }, {
+      "id": "1f62edad-e783-45cf-a5d1-09fa25086b02",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(20)",
+      "targets": [
+        ["css=.btn:nth-child(20)", "css:finder"],
+        ["xpath=//input[@value='Ajouter']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58cadce7-d14b-4ee8-be27-4a4259def9ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f406560c-39b9-472a-93d4-d92960b532ed",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["94059ef4-acf2-4fd1-aeaa-f2365d1013cc"]
+  }],
+  "urls": ["http://localhost/"],
+  "plugins": []
+}
