@@ -1,0 +1,370 @@
+{
+  "id": "cdbbcda6-7385-447f-92d7-568c6bacd392",
+  "version": "2.0",
+  "name": "test de compréhension ",
+  "url": "http://localhost",
+  "tests": [{
+    "id": "2f23bbc7-d657-466c-b094-0591c07d70d2",
+    "name": "Untitled",
+    "commands": [{
+      "id": "cb73cde6-67bf-4d84-addc-ff6ca490b5d7",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57e4ceb4-8661-4455-a948-5102e031ceee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a9b0a9a-3b6f-45b5-9bb7-9cd3b626e790",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "242c83fc-bf16-453b-9fd6-9c7d5a36aec6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "691cc566-5ba8-4bed-8150-0574380118f1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "360e9521-3f09-4e93-b132-6215decdd6d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=send",
+      "targets": [
+        ["id=send", "id"],
+        ["css=#send", "css:finder"],
+        ["xpath=//button[@id='send']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter un article')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a509763-c128-412f-a312-ada9f680bb72",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a032194e-d1d0-4576-b85a-ddf1c5b7a2d2",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Moto "
+    }, {
+      "id": "4f99a1f9-a90d-43a3-9301-fc2163ab61ef",
+      "comment": "",
+      "command": "click",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "087a8129-8fda-48dc-bf13-6a82c6673aea",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\moto.jpg"
+    }, {
+      "id": "a9adca5e-751d-4dc1-b0c9-9f51c5f783a1",
+      "comment": "",
+      "command": "click",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d89f4e03-57e0-4d93-8047-fe43a85c98b8",
+      "comment": "",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "C'est une moto"
+    }, {
+      "id": "2826f918-3f35-420a-80b1-61707c0b3516",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(20)",
+      "targets": [
+        ["css=.btn:nth-child(20)", "css:finder"],
+        ["xpath=//input[@value='Ajouter']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd9ded43-3686-413c-929b-eaf47329b318",
+      "comment": "",
+      "command": "click",
+      "target": "css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[9]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a38cb8a-c53a-4699-bd45-5e1a0267b1c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnModifArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
+        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "828c526c-9491-43be-a87e-1989fc851754",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc19e576-96d2-4982-b8a4-f2dc25cba34d",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Moto rouge"
+    }, {
+      "id": "92c49d03-fd47-4996-9b9c-e0b26690fc12",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcc341cf-d83a-45cc-8520-9ed460f8f131",
+      "comment": "",
+      "command": "click",
+      "target": "id=disponible",
+      "targets": [
+        ["id=disponible", "id"],
+        ["name=status", "name"],
+        ["css=#disponible", "css:finder"],
+        ["xpath=//input[@id='disponible']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf01756a-e675-479a-82b3-8b987ac801e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34fef726-b23a-4072-8832-dae14b5f1552",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnEmprArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnEmprArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Emprunter l'article\"]", "xpath:attributes"],
+        ["xpath=//div[6]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c318bad5-b6e9-4dd4-8a30-1733c2847c3b",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a394ef5-e43e-4f06-97f8-87c91e7d2855",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2023-05-26"
+    }, {
+      "id": "d6aef778-8157-4106-8d8b-0702d6111ec5",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5caa3b92-243c-4b76-95e7-2c8d99501bd4",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2023-05-30"
+    }, {
+      "id": "bdd5887d-6267-474c-b5a0-4d6e092b6f0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(10)",
+      "targets": [
+        ["css=.btn:nth-child(10)", "css:finder"],
+        ["xpath=//input[@value='Emprunter']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "571b1842-593c-44d6-83e3-f84354efa61f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "87f7fb41-1d89-4da3-bc4a-24a234be317d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.userEmprlistconn:nth-child(7) input:nth-child(2)",
+      "targets": [
+        ["css=.userEmprlistconn:nth-child(7) input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value=\"Arrêter l'emprunt\"])[4]", "xpath:attributes"],
+        ["xpath=//div[4]/div[3]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8261d1b9-3677-479d-9e0d-c468dec98709",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4fa2d02d-4fc3-4d55-95fb-7be2ea7ae8a8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2f23bbc7-d657-466c-b094-0591c07d70d2"]
+  }],
+  "urls": ["http://localhost/"],
+  "plugins": []
+}

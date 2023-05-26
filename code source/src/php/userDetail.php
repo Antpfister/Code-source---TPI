@@ -59,33 +59,31 @@
                 foreach ($Emprunts as $Emprunt) {
                     $Emprunt['loaBeginDate'] = date('d.m.Y',strtotime($Emprunt['loaBeginDate']));
                     $Emprunt['loaEndDate'] = date('d.m.Y',strtotime($Emprunt['loaEndDate']));
-                    if($Emprunt['FKUser'] == $_SESSION['idUser']){
+                    if($Emprunt['fkUser'] == $_SESSION['idUser']){
                         
                         $limiteDate = date('d.m.Y', strtotime($Emprunt['loaEndDate']."-2 day"));
                         
-                        if ($limiteDate < $curDate ){
-                            if($Emprunt['loaEndDate'] == $curDate){
-                                echo 'va être suprimer :)'. $Emprunt['artName'].$Emprunt['loaEndDate'];
-                                //echo '<meta http-equiv="refresh" content="0, URL=suppEmprunt.php?id='.$Emprunt["FKArticle"].'" >';
-                            }
-                            echo 'reste que deux jour à '. $Emprunt['artName'].$limiteDate.$Emprunt['loaEndDate'];
-
-                            ?><script>
+                        if ($limiteDate <= $curDate ){
+                            if($Emprunt['loaEndDate'] <= $curDate){
+                                
+                                echo '<meta http-equiv="refresh" content="0, URL=suppEmprunt.php?id='.$Emprunt["fkArticle"].'" >';
+                            }else{
+                                ?>
+                                <script>
                                 function activerConteneur() {
                                     var conteneur = document.getElementById('notifMessage');
                                     conteneur.style.display = 'block';
                                 }
                                 activerConteneur();
-                            </script>
+                                </script>
                             <?php
+                            }
                         }
-                        else{
-                            echo 'rien a notifier ';
-                        }
+                        
             ?>
                     <div class="userEmprlistconn">
                         <div class="imgarticle">
-                            <a class="imglien" href="article.php?id=<?= $Emprunt["FKArticle"] ?>">
+                            <a class="imglien" href="article.php?id=<?= $Emprunt["fkArticle"] ?>">
                             <img class="imgarticle" src="../../resources/images/<?= $Emprunt["artPicture"] ?>" alt="">
                             </a>
                         </div>
@@ -95,7 +93,7 @@
                         </div>
                         <div class="btnSuppArticle">
                             <form action='suppEmprunt.php' method='get'>
-                                <input type='hidden' name="id" value='<?php echo $Emprunt["FKArticle"]; ?>'>
+                                <input type='hidden' name="id" value='<?php echo $Emprunt["fkArticle"]; ?>'>
                                 <input type="submit" value="Arrêter l'emprunt">
                             </form>
                         </div>

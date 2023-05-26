@@ -127,7 +127,7 @@ class Database {
         }
     }
     public function insertArticle($artName,$artstatus,$artimage,$artdescription,$artuser) {
-        $query = "INSERT INTO t_article(artName,artStatus,artPicture,artDescription,idUser) 
+        $query = "INSERT INTO t_article(artName,artStatus,artPicture,artDescription,fkUserArticle) 
         VALUES(:artName,:artstatus,:artimage,:artdescription,:artuser)";
 
         $binds = array(
@@ -163,7 +163,7 @@ class Database {
         $this->unsetData($req);
     }
     public function insertLoan($emprDateBegin,$emprDateEnd,$FKArticle,$FKUser) {
-        $query = "INSERT INTO t_loan(loaBeginDate,loaEndDate,FKArticle,FKUser) 
+        $query = "INSERT INTO t_loan(loaBeginDate,loaEndDate,fkArticle,fkUser) 
         VALUES(:emprDateBegin,:emprDateEnd,:FKArticle,:FKUser)";
 
         $binds = array(
@@ -195,7 +195,7 @@ class Database {
     }
     public function getAllArticlesAndInfos(){
         $req = $this->querySimpleExecute('SELECT * FROM t_article
-        INNER JOIN t_user ON t_article.idUser = t_user.idUser');
+        INNER JOIN t_user ON t_article.fkUserArticle = t_user.idUser');
         $result = $this->formatData($req);
 
         $this->unsetData($req);
@@ -204,8 +204,7 @@ class Database {
     }
     public function getAllLoansAndInfos(){
         $req = $this->querySimpleExecute('SELECT * FROM t_loan
-        INNER JOIN t_user ON t_loan.FKUser = t_user.idUser
-        INNER JOIN t_article ON t_loan.FKArticle = t_article.idArticle');
+        INNER JOIN t_article ON t_loan.fkArticle = t_article.idArticle');
         $result = $this->formatData($req);
 
         $this->unsetData($req);
@@ -214,7 +213,7 @@ class Database {
     }
     public function getArticle($id){
         $query = 'SELECT * FROM t_article
-        INNER JOIN t_user ON t_article.idUser = t_user.idUser
+        INNER JOIN t_user ON t_article.fkUserArticle = t_user.idUser
         WHERE idArticle = :id';
 
         $binds = array(
@@ -270,7 +269,7 @@ class Database {
 
     }
     public function suppLoan($FKArticle){
-        $query = 'DELETE FROM `t_loan` WHERE `FKArticle` = :FKArticle';
+        $query = 'DELETE FROM `t_loan` WHERE `fkArticle` = :FKArticle';
 
         $binds = array(
             0 => array(
@@ -325,7 +324,7 @@ class Database {
 
     public function searchlocal($barrRecherche){
         $req = $this->querySimpleExecute('SELECT idArticle FROM t_article
-        INNER JOIN t_user ON t_article.idUser = t_user.idUser
+        INNER JOIN t_user ON t_article.fkUserArticle = t_user.idUser
         WHERE useLocal LIKE "%'.$barrRecherche.'%"');
 
         $result = $this->formatData($req);

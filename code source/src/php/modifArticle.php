@@ -49,7 +49,7 @@
                 <br>
                 
                 <label for="status">Le status de l'article :</label>
-                <input type="radio" id="disponible" name="status" value="1">
+                <input type="radio" id="disponible" name="status" value="1" checked>
                 <label for="huey">disponible</label>
                 <input type="radio" id="indisponible" name="status" value="0">
                 <label for="huey">indisponible</label>
