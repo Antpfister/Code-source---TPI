@@ -38,12 +38,8 @@
         $NbArticles =$user['useNbArticles'];
         $NbArticles--;
 
-        $connector = new Database();
-        $connector->suppArticle($idArticle);
-        $connector = null;
-        
-        $NbLoan =$user['useNbLoan'];
-        if($NbLoan != 0){
+        if($user['useNbLoan'] != 0){
+            $NbLoan = $user['useNbLoan'];
             $NbLoan--;
             $connector = new Database();
             $connector->suppLoan($idArticle);
@@ -52,6 +48,10 @@
             $connector->UpdateNbLoanUser($user['idUser'],$NbLoan);
             $connector = null;
         }
+
+        $connector = new Database();
+        $connector->suppArticle($idArticle);
+        $connector = null;
 
         $connector = new Database();
         $connector->UpdateNbArticleUser($user['idUser'],$NbArticles);
