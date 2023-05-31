@@ -32,13 +32,12 @@
         if($NbLoan != 0){
             $NbLoan--;
             $connector = new Database();
-            $connector->suppLoan($idArticle);
-            $connector = null;
-            $connector = new Database();
             $connector->UpdateNbLoanUser($user['idUser'],$NbLoan);
             $connector = null;
         }
-        
+        $connector = new Database();
+        $connector->suppLoan($idArticle);
+        $connector = null;
         $connector = new Database();
         $connector->UpdateStatusArticle($idArticle,1);
         $connector = null;

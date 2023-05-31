@@ -40,9 +40,10 @@
         if($imageType == "image/jpeg"){
             date_default_timezone_set('Europe/Paris');
             
-            $artimage = date('d-m-y_h:i:s'). $_FILES['image']['name'] ;
+            $artimage = date('d-m-y_h.i.s'). $_FILES['image']['name'] ;
+            echo $artimage;
             $imageDestination = '../../resources/images/' . $artimage;
-            
+            echo $imageDestination;
             if ($_FILES['image']['error'] == 0) {
             }
             else{
@@ -95,8 +96,8 @@
     elseif ($error == 0){
         
         if(!empty($imageTmp)){
-            // enregistre l'image et le pdf
-            move_uploaded_file($imageTmp, $imagelocation);
+            // enregistre l'image
+            move_uploaded_file($imageTmp, $imageDestination);
         }
         
 

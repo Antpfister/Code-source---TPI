@@ -51,7 +51,7 @@
             <h4>Créer le <?= $user["useRegisterDate"] ?></h4>
             <p>Localisation : <?= $user["useLocal"] ?></p>
             <p>Nombre d'article créer par l'utilisateur <?= $user["useNbArticles"] ?></p>
-            <p>Nombre d'emprunt que l'utilisateur à actuellement :  <?= $user["useNbLoan"] ?></p>
+            <p>Nombre d'emprunt que l'utilisateur a actuellement :  <?= $user["useNbLoan"] ?></p>
         </div>
         <div class="userEmprlist">
         <h2>Liste des articles Emprunter actuellement :</h2>
@@ -63,10 +63,11 @@
                         
                         $limiteDate = date('d.m.Y', strtotime($Emprunt['loaEndDate']."-2 day"));
                         
-                        if ($limiteDate <= $curDate ){
-                            if($Emprunt['loaEndDate'] <= $curDate){
+                        
+                        if ($limiteDate >= $curDate ){
+                            if($Emprunt['loaEndDate'] >= $curDate){
                                 
-                                echo '<meta http-equiv="refresh" content="0, URL=suppEmprunt.php?id='.$Emprunt["fkArticle"].'" >';
+                              echo '<meta http-equiv="refresh" content="0, URL=suppEmprunt.php?id='.$Emprunt["fkArticle"].'" >';
                             }else{
                                 ?>
                                 <script>
