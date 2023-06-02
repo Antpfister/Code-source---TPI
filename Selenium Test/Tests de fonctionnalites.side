@@ -14,13 +14,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "efa78b85-c17a-4e71-b6f4-23c17dfba0dd",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1936x1056",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "cfc1152e-c675-4465-ab8a-3986d093f1a0",
       "comment": "",
       "command": "click",
@@ -173,13 +166,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "e8842b1c-d7f1-4f4a-b786-a257a94e751e",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1920x1040",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "0cf86177-3f0a-4395-8bec-b40a7fc88198",
       "comment": "",
       "command": "click",
@@ -223,13 +209,6 @@
       "comment": "",
       "command": "open",
       "target": "/src/php/home.php",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c0fca3d4-bf7a-43e8-b82c-009538ad4c84",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1920x1040",
       "targets": [],
       "value": ""
     }, {
@@ -345,13 +324,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f200386a-7617-4810-96f8-c9d3e8f311df",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1920x1040",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "a98e0d17-2065-4eab-8cb3-bf0276d36068",
       "comment": "",
       "command": "click",
@@ -401,13 +373,6 @@
       "comment": "",
       "command": "open",
       "target": "/src/php/home.php",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "2e32d72a-9910-48d6-ae1d-430963465e77",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "945x1020",
       "targets": [],
       "value": ""
     }, {
@@ -518,7 +483,7 @@
         ["xpath=//input[@id='image']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "C:\\fakepath\\moto bleu.jpg"
+      "value": "D:\\4ème année\\TPI\\Documentation\\dépot image\\moto bleu.jpg"
     }, {
       "id": "9761d850-38f8-413e-aa77-3d4764fb23ba",
       "comment": "",
@@ -681,13 +646,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "8a435f43-e02d-4b27-a46b-65c949813c0e",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1936x1056",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "1ed3baf3-a9b1-4d4b-a7db-b605384103b3",
       "comment": "",
       "command": "click",
@@ -793,13 +751,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "d47b621e-512e-4760-9785-92f2c002a24b",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1936x1056",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "3bf297c9-c12f-4dd1-9a3f-aa7ac887d8a7",
       "comment": "",
       "command": "click",
@@ -890,13 +841,6 @@
       "comment": "",
       "command": "open",
       "target": "/src/php/home.php",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "547e3b13-61e1-4dcf-83d5-404917550485",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "945x1020",
       "targets": [],
       "value": ""
     }, {
@@ -1019,13 +963,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "66621111-4883-45b7-b644-4ac255a1f1b0",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "945x1020",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "af6c609f-7512-4d8b-ba9a-19ee8e9ab4e5",
       "comment": "",
       "command": "click",
@@ -1059,13 +996,6 @@
       "comment": "",
       "command": "open",
       "target": "/src/php/home.php",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c52c7772-c705-4635-84ae-ff2519750916",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "945x1020",
       "targets": [],
       "value": ""
     }, {
@@ -1171,13 +1101,6 @@
       "comment": "",
       "command": "open",
       "target": "/src/php/home.php",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "9e43a592-f976-4f17-a081-9a870fe1c637",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "945x1020",
       "targets": [],
       "value": ""
     }, {

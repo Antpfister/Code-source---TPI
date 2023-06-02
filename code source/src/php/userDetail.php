@@ -57,17 +57,25 @@
         <h2>Liste des articles Emprunter actuellement :</h2>
             <?php    
                 foreach ($Emprunts as $Emprunt) {
+
                     $Emprunt['loaBeginDate'] = date('d.m.Y',strtotime($Emprunt['loaBeginDate']));
                     $Emprunt['loaEndDate'] = date('d.m.Y',strtotime($Emprunt['loaEndDate']));
+
                     if($Emprunt['fkUser'] == $_SESSION['idUser']){
                         
                         $limiteDate = date('d.m.Y', strtotime($Emprunt['loaEndDate']."-2 day"));
                         
                         
-                        if ($limiteDate >= $curDate ){
-                            if($Emprunt['loaEndDate'] >= $curDate){
+                        $strlimiteDate = strtotime($limiteDate);
+                        $strcurdate = strtotime($curDate);
+                        $strLoaEndDate = strtotime($Emprunt['loaEndDate']);
+
+
+
+                        if ($strlimiteDate <= $strcurdate ){
+                            if($strLoaEndDate <= $strcurdate){
                                 
-                              echo '<meta http-equiv="refresh" content="0, URL=suppEmprunt.php?id='.$Emprunt["fkArticle"].'" >';
+                            echo '<meta http-equiv="refresh" content="0, URL=suppEmprunt.php?id='.$Emprunt["fkArticle"].'" >';
                             }else{
                                 ?>
                                 <script>
@@ -79,26 +87,25 @@
                                 </script>
                             <?php
                             }
-                        }
-                        
+                        } 
             ?>
-                    <div class="userEmprlistconn">
-                        <div class="imgarticle">
-                            <a class="imglien" href="article.php?id=<?= $Emprunt["fkArticle"] ?>">
-                            <img class="imgarticle" src="../../resources/images/<?= $Emprunt["artPicture"] ?>" alt="">
-                            </a>
-                        </div>
-                        <div class="infoarticles">
-                            <strong><?= $Emprunt['artName'] ?></strong>
-                            <p>Du <?= $Emprunt['loaBeginDate'] ?> jusqu'au <?= $Emprunt['loaEndDate']?>.</p>
-                        </div>
-                        <div class="btnSuppArticle">
-                            <form action='suppEmprunt.php' method='get'>
-                                <input type='hidden' name="id" value='<?php echo $Emprunt["fkArticle"]; ?>'>
-                                <input type="submit" value="Arrêter l'emprunt">
-                            </form>
-                        </div>
-                    </div>
+            <div class="userEmprlistconn">
+                <div class="imgarticle">
+                    <a class="imglien" href="article.php?id=<?= $Emprunt["fkArticle"] ?>">
+                    <img class="imgarticle" src="../../resources/images/<?= $Emprunt["artPicture"] ?>" alt="">
+                    </a>
+                </div>
+                <div class="infoarticles">
+                    <strong><?= $Emprunt['artName'] ?></strong>
+                    <p>Du <?= $Emprunt['loaBeginDate'] ?> jusqu'au <?= $Emprunt['loaEndDate']?>.</p>
+                </div>
+                <div class="btnSuppArticle">
+                    <form action='suppEmprunt.php' method='get'>
+                        <input type='hidden' name="id" value='<?php echo $Emprunt["fkArticle"]; ?>'>
+                        <input type="submit" value="Arrêter l'emprunt">
+                    </form>
+                </div>
+            </div>
             <?php 
                     }    
                 }
