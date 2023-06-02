@@ -1,12 +1,13 @@
-<!--
-/// ETML
-/// Auteurs : Anthony Pfister
-/// Date : 15.05.2023
-/// Description : page d'ajout d'article dans la base de données, l'utilisateur doit remplir le formulaire
--->
 <!DOCTYPE html>
 <html>
     <head>
+        <!--
+        /// ETML
+        /// Auteurs : Anthony Pfister
+        /// Date : 15.05.2023
+        /// Description : page d'ajout d'article dans la base de données, l'utilisateur doit remplir le formulaire avec nom, image, description, et statut.
+        ///               Un message d'erreur s'affiche si il y a une erreur dans la saisie 
+        -->
         <meta charset="utf-8">
         <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title>Ajout article - Gestion de prêt entre voisins</title>

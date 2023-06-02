@@ -5,7 +5,7 @@
 /// Description : page de vérification de l'article qui a été modifier par l'utilisateur.
 -->
 <?php 
-    include "Database.php";
+    include "lib/Database.php";
     session_start();
 
     $error = 0;

@@ -5,19 +5,26 @@
 /// Description : page de vérification de l'emprunt d'un article et création de l'emprunt dans la base de données.
 -->
 <?php 
-    include "Database.php";
+    include "lib/Database.php";
     session_start();
 
     $error = 0;
     $idArticle = $_POST['id'];
-    function isValid($date, $format = 'd.m.Y'){
-        $dt = DateTime::createFromFormat($format, $date);
-        return $dt && $dt->format($format) === $date;
-    }  
+    date_default_timezone_set('Europe/Paris');
+    $curDate = date('d.m.Y');
 
+    $strcurdate = strtotime($curDate);
         
     if(isset($_POST['DateBegin'])){
-        $emprDateBegin = $_POST['DateBegin'];
+        $strDateBegin = strtotime($_POST['DateBegin']);
+
+        if($strDateBegin >= $strcurdate)
+        {
+            $emprDateBegin = $_POST['DateBegin'];
+        }
+        else{
+            $error++;
+        }
     }
     else{
         $error++;
@@ -26,11 +33,26 @@
         
     if(isset($_POST['DateEnd'])){
         $emprDateEnd = $_POST['DateEnd'];
+        $strDateEnd = strtotime($_POST['DateEnd']);
+
+        if($strDateEnd > $strcurdate)
+        {
+            $emprDateEnd = $_POST['DateEnd'];
+        }
+        else{
+            $error++;
+        }
     }
     else{
         $error++;
     }
 
+    if($strDateBegin < $strDateEnd){
+        
+    }
+    else{
+        $error++;
+    }
 
     
     if($error == 0){

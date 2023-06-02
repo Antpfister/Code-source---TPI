@@ -11,7 +11,7 @@
 <!--<link rel="stylesheet" Href="../../resources/CSS/style.css">-->
 <link rel="stylesheet" href="../../resources/CSS/style.css?v=<?php echo time(); ?>">
 <?php
-include 'Database.php';
+include 'lib/Database.php';
 session_start();
 
 

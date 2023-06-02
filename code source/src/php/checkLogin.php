@@ -5,7 +5,7 @@
 /// Description : check les information pour la connexion de l'utilisateur
 -->
 <?php
-    include "Database.php";
+    include "lib/Database.php";
     session_start();
 
     $error = 0;

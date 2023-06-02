@@ -1,14 +1,13 @@
-<!--
-/// ETML
-/// Auteur : Anthony Pfister
-/// Date : 15.05.2023
-/// Description : page d'information d'un article 
--->
-
 <!DOCTYPE html>
-
 <html>
     <head>
+        <!--
+        /// ETML
+        /// Auteur : Anthony Pfister
+        /// Date : 15.05.2023
+        /// Description : Page d'information d'un article sélectionné. Depuis cette page, le button supprimer et modifier sont accessible qu'avec l'utilisateur qui l'as créer 
+        /// -             et le bouton emprunter renvoye un message d'erreur si l'article est déjà emprunter. 
+        -->
         <meta charset="utf-8">
         <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title id="title">Article - Gestion de prêt entre voisins</title>

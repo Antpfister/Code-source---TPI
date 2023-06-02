@@ -128,6 +128,8 @@
                             <img class="imgarticle" src="../../resources/images/<?= $article["artPicture"] ?>" alt="">
                             </a>
                         </div>
+                        <br>
+                        <br>
                         <div class="infoarticles">
                             <strong><?= $article['artName'] ?></strong>
                             <?php 

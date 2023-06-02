@@ -1,7 +1,7 @@
 {
   "id": "7a002ca9-e37b-4a97-90ee-09112e67ff5e",
   "version": "2.0",
-  "name": "Tests de fonctionnalitées",
+  "name": "Tests de fonctionnalitées 2",
   "url": "http://localhost",
   "tests": [{
     "id": "94059ef4-acf2-4fd1-aeaa-f2365d1013cc",
@@ -129,18 +129,6 @@
         ["xpath=//textarea", "xpath:position"]
       ],
       "value": "C'est un article de test pour voir le bon fonctionnement du site."
-    }, {
-      "id": "0b316342-6e58-454e-ae69-f381aa927b3f",
-      "comment": "",
-      "command": "click",
-      "target": "id=indisponible",
-      "targets": [
-        ["id=indisponible", "id"],
-        ["css=#indisponible", "css:finder"],
-        ["xpath=//input[@id='indisponible']", "xpath:attributes"],
-        ["xpath=//input[4]", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "1f62edad-e783-45cf-a5d1-09fa25086b02",
       "comment": "",
