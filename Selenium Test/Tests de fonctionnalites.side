@@ -95,14 +95,8 @@
       "comment": "",
       "command": "type",
       "target": "id=image",
-      "targets": [
-        ["id=image", "id"],
-        ["name=image", "name"],
-        ["css=#image", "css:finder"],
-        ["xpath=//input[@id='image']", "xpath:attributes"],
-        ["xpath=//input[2]", "xpath:position"]
-      ],
-      "value": "D:\\4ème année\\TPI\\Documentation\\dépot image\\moto.jpg"
+      "targets": [],
+      "value": "D:\\4ème année\\TPI\\ReposSite_Gestion-de-prêt-entre-voisins\\Main\\Selenium Test\\dépot image\\moto.jpg"
     }, {
       "id": "fb998cad-babf-4253-9e46-b2d1c66ea16d",
       "comment": "",
@@ -171,38 +165,56 @@
     "id": "afffcfab-496a-4270-8dda-ce44add7737a",
     "name": "Test 10 : Supprimer l'article",
     "commands": [{
-      "id": "810c2114-d506-45a4-98ed-19a49d56c56d",
+      "id": "ce3b2edb-1ef8-444c-a6cc-0d7b2e62698c",
       "comment": "",
       "command": "open",
       "target": "/src/php/home.php",
       "targets": [],
       "value": ""
     }, {
-      "id": "0cf86177-3f0a-4395-8bec-b40a7fc88198",
+      "id": "fec8de7d-7d95-41c6-bb77-dd32877bfee6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1020",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4b9f67f-f87c-4c6b-9734-710daa2b6cdb",
       "comment": "",
       "command": "click",
-      "target": "linkText=Liste des Articles",
+      "target": "css=.navUserDetail",
       "targets": [
-        ["linkText=Liste des Articles", "linkText"],
-        ["css=.navListArticle > .navBarr", "css:finder"],
-        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
-        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
-        ["xpath=//div[2]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+        ["css=.navUserDetail", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"],
+        ["xpath=//div[contains(.,'antpfister / Profil')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "5534ddb2-b5ab-4529-a295-2fb947877be2",
+      "id": "056ae67c-a0c7-442f-80a6-02dbdbb3299d",
       "comment": "",
       "command": "click",
-      "target": "css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle",
+      "target": "linkText=antpfister / Profil",
       "targets": [
-        ["css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle", "css:finder"],
-        ["xpath=//div[9]/div/a/img", "xpath:position"]
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "8d256cb9-8700-4817-ad10-0476b01891cf",
+      "id": "5ecc0bfe-68c0-41ca-ad67-80117d802763",
+      "comment": "",
+      "command": "click",
+      "target": "css=.userEmprlist:nth-child(13) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.userEmprlist:nth-child(13) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[2]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d5d817f-89ca-4ab7-8dbf-fa44b26f1f4e",
       "comment": "",
       "command": "click",
       "target": "css=input:nth-child(3)",
@@ -488,14 +500,8 @@
       "comment": "",
       "command": "type",
       "target": "id=image",
-      "targets": [
-        ["id=image", "id"],
-        ["name=image", "name"],
-        ["css=#image", "css:finder"],
-        ["xpath=//input[@id='image']", "xpath:attributes"],
-        ["xpath=//input[2]", "xpath:position"]
-      ],
-      "value": "D:\\4ème année\\TPI\\Documentation\\dépot image\\moto bleu.jpg"
+      "targets": [],
+      "value": "D:\\4ème année\\TPI\\ReposSite_Gestion-de-prêt-entre-voisins\\Main\\Selenium Test\\dépot image\\moto bleu.jpg"
     }, {
       "id": "9761d850-38f8-413e-aa77-3d4764fb23ba",
       "comment": "",
@@ -658,27 +664,27 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "1ed3baf3-a9b1-4d4b-a7db-b605384103b3",
+      "id": "227d9bb7-ff08-4052-b407-1855a3fa4d8c",
       "comment": "",
       "command": "click",
-      "target": "linkText=Liste des Articles",
+      "target": "linkText=antpfister / Profil",
       "targets": [
-        ["linkText=Liste des Articles", "linkText"],
-        ["css=.navListArticle > .navBarr", "css:finder"],
-        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
-        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
-        ["xpath=//div[2]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.actif", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "66e9023b-f1c8-4888-bee7-f6cd0116d0e7",
+      "id": "82ac226d-349b-439b-a9aa-ea401e3f85e6",
       "comment": "",
       "command": "click",
-      "target": "css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle",
+      "target": "css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle",
       "targets": [
-        ["css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle", "css:finder"],
-        ["xpath=//div[9]/div/a/img", "xpath:position"]
+        ["css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[5]/div/a/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -715,7 +721,7 @@
         ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "2023-05-31"
+      "value": "2023-07-01"
     }, {
       "id": "f80a5fba-f947-46fd-82e4-a822ca6de4d1",
       "comment": "",
@@ -739,7 +745,7 @@
         ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "2023-06-08"
+      "value": "2023-07-08"
     }, {
       "id": "1306fa38-00f7-430b-99e8-e24601968531",
       "comment": "",
@@ -780,10 +786,10 @@
       "id": "f016ff29-b9d6-4bba-af79-0a28e2af952c",
       "comment": "",
       "command": "click",
-      "target": "css=.userEmprlist:nth-child(11) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle",
+      "target": "css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle",
       "targets": [
-        ["css=.userEmprlist:nth-child(11) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle", "css:finder"],
-        ["xpath=//div[2]/div/a/img", "xpath:position"]
+        ["css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[5]/div/a/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -913,7 +919,7 @@
         ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "2023-05-31"
+      "value": "2023-07-01"
     }, {
       "id": "7642117b-595e-4892-af95-b0ec0b0884b1",
       "comment": "",
@@ -937,7 +943,7 @@
         ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "2023-06-08"
+      "value": "2023-07-08"
     }, {
       "id": "832a6806-0dd9-434d-8005-b770204f1870",
       "comment": "",
@@ -1068,7 +1074,7 @@
         ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "2023-05-31"
+      "value": "2023-07-01"
     }, {
       "id": "0ecae487-0a4f-4f9b-9e19-5db4d9a05a43",
       "comment": "",
@@ -1092,7 +1098,7 @@
         ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "2023-06-08"
+      "value": "2023-07-08"
     }, {
       "id": "0988a31b-6bfd-4014-b11e-fd63efc2a181",
       "comment": "",

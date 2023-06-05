@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 26 mai 2023 à 10:04
+-- Généré le : lun. 05 juin 2023 à 14:10
 -- Version du serveur : 5.7.11
 -- Version de PHP : 8.2.6
 
@@ -42,11 +42,10 @@ CREATE TABLE `t_article` (
 
 INSERT INTO `t_article` (`idArticle`, `artName`, `artStatus`, `artPicture`, `artDescription`, `fkUserArticle`) VALUES
 (3, 'longue vue', 0, 'longvue.jpg', 'ça marche ', 2),
-(6, 'paire de jumelle', 0, 'jumelle.jpg', 'ce sont des jumelles :D', 1),
-(10, 'tondeuse', 1, '17-05-23Tondeuses.jpg', 'c\'est une tondeuse', 1),
+(6, 'paire de jumelle', 1, 'jumelle.jpg', 'ce sont des jumelles :D', 1),
+(10, 'tondeuse', 0, '17-05-23Tondeuses.jpg', 'c\'est une tondeuse', 1),
 (12, 'voiture', 1, '17-05-23voiture.jpg', 'c\'est une voiture', 1),
-(16, 'Arrosoire', 0, '24-05-23_10.26.52Arrosoire.jpg', 'c\'est un arrosoire ', 1),
-(17, 'Moto rouge', 1, '26-05-23_11.10.02moto.jpg', 'C\'est une moto', 1);
+(16, 'Arrosoire', 1, '24-05-23_10.26.52Arrosoire.jpg', 'c\'est un arrosoire ', 1);
 
 -- --------------------------------------------------------
 
@@ -67,9 +66,8 @@ CREATE TABLE `t_loan` (
 --
 
 INSERT INTO `t_loan` (`idLoan`, `loaBeginDate`, `loaEndDate`, `fkArticle`, `fkUser`) VALUES
-(13, '2023-05-26', '2023-06-01', 16, 1),
-(15, '2023-05-26', '2023-05-27', 6, 1),
-(16, '2023-05-26', '2023-05-27', 3, 1);
+(18, '2023-06-02', '2023-06-07', 10, 2),
+(31, '2023-06-03', '2023-06-09', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -92,8 +90,8 @@ CREATE TABLE `t_user` (
 --
 
 INSERT INTO `t_user` (`idUser`, `useName`, `usePassword`, `useLocal`, `useNbArticles`, `useNbLoan`, `useRegisterDate`) VALUES
-(1, 'antpfister', 'qwer1234', 'Lausanne', 5, 3, '2023-05-12'),
-(2, 'client', 'qwer1234', 'Lutry', 0, 0, '2023-05-15'),
+(1, 'antpfister', 'qwer1234', 'Lausanne', 4, 0, '2023-05-12'),
+(2, 'client', 'qwer1234', 'Lutry', 0, 1, '2023-05-15'),
 (3, 'client2', 'qwer1234', 'Lausanne', 0, 0, '2023-05-17');
 
 --
@@ -129,13 +127,13 @@ ALTER TABLE `t_user`
 -- AUTO_INCREMENT pour la table `t_article`
 --
 ALTER TABLE `t_article`
-  MODIFY `idArticle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idArticle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT pour la table `t_loan`
 --
 ALTER TABLE `t_loan`
-  MODIFY `idLoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idLoan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT pour la table `t_user`
