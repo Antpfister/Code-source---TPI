@@ -5,7 +5,7 @@
         /// ETML
         /// Auteurs : Anthony Pfister
         /// Date : 15.05.2023
-        /// Description : page d'ajout d'article dans la base de données, l'utilisateur doit remplir le formulaire avec nom, image, description, et statut.
+        /// Description : Page d'ajout d'article dans la base de données, l'utilisateur doit remplir le formulaire avec nom, image, description, et statut.
         ///               Un message d'erreur s'affiche si il y a une erreur dans la saisie 
         -->
         <meta charset="utf-8">
@@ -13,14 +13,20 @@
         <title>Ajout article - Gestion de prêt entre voisins</title>
     </head>
     <body>
+     <!--variable d'indication navigateur---->   
     <?php $actif = 0?>
+
+    <!--incrustation navigateur-->
+    <!--Check si l'utilisateur est connecté-->
         <?php
             include "menu.php";
             include "checkConnection.php";
         ?>
+        <!--Titre Page-->
         <div class="titleAddArticle">
             <h1 >Ajouter un Article</h1>
         </div>
+        <!--Formulaire Ajout d'article-->
         <div class="divformAddArticle">
             <form method="post" action="checkInsertArticle.php" enctype="multipart/form-data">
                 <label for="Name">Nom de l'article :</label>
@@ -46,6 +52,7 @@
                 <input type="reset" class="btn btn-primary mt-4" value="Vider">
             </form>
         </div>
+        <!--Message d'erreur-->
         <div class="errMessage">
             <?php 
             if (isset($_GET['error'])) {
@@ -53,6 +60,7 @@
             <p>Vous avez mal rempli le formulaire d'ajout d'article !! s'il vous plaie recommencer.</p>
             <?php }?>
         </div>
+        <!--incrustation pied de page-->
         <?php include 'footer.php' ?>
     </body>
 </html>

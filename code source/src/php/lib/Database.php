@@ -3,9 +3,9 @@
     ETML
     Auteur : Anthony Pfister
     Date 12.05.2023
-    Description : Crée une connexion à db_gestionpretvoisins, et renvoie des données de la db.
+    Description : Crée une connexion à db_gestionpretvoisins, et renvoie des données de la db. toutes les méthodes qui communique avec la base de données 
 */
-
+/// incruste la page de configuration des information pour la base données 
 include 'config.php';
 
 class Database {
@@ -30,6 +30,8 @@ class Database {
 
     /**
      * Fait une requête simple
+     * @param -> réquète SQL
+     * @return -> retourne le résultat de la requête SQL
      */
     private function querySimpleExecute($query){
         return $req = $this->connector->query($query);
@@ -37,6 +39,9 @@ class Database {
 
     /**
      * Requête à la db en utilisant les requêtes préparées
+     * @param -> 1,réquète SQL
+     * @param -> 2,incrémente les variables
+     * @return -> retourne le résultat de la requête SQL
      */
     private function queryPrepareExecute($query, $binds){
         $req = $this->connector->prepare($query, $binds);
@@ -51,25 +56,11 @@ class Database {
 
         return $req;
     }
-    private function queryPrepareExecuteArray($query, $binds){
-        $req = $this->connector->prepare($query, $binds);
-
-        if (!empty($binds)) {
-            foreach ($binds as $bind) {
-                $req->bindValue($bind["marker"], $bind["value"], $bind["type"]);
-            }
-        }
-        
-        $req->execute();
-        $result = $req->mysqli_stmt_get_result();
-
-
-        return $result;
-    }
-
 
     /**
      * Retoune les données de la requête sont forme de tableau associatif
+     * @param -> données de la requête
+     * @return -> tableau associatif
      */
     private function formatData($req){
         return $req->fetchAll(PDO::FETCH_ASSOC);
@@ -77,6 +68,7 @@ class Database {
 
     /**
      * Vide le jeu d'enregistrement
+     * @param -> données de la requête
      */
     private function unsetData($req){
         $req->closeCursor();
@@ -85,6 +77,8 @@ class Database {
     
     /**
      * Retourne les données d'un utilisateur grâce à son nom
+     * @param -> nom de l'utilisateur
+     * @return -> toutes les données de l'utilisateur
      */
     public function getUserName($userName){
         $query = 'SELECT * FROM t_user WHERE useName = :userName';
@@ -106,6 +100,12 @@ class Database {
             return $result[0];
         }
     }
+
+    /**
+     * Retourne l'identifiant de l'utilisateur avec selon de la session actuelle
+     * @param -> identifiant de l'utilisateur
+     * @return -> identifiant de la base de données 
+     */
     public function getUserID($idUser){
         $query = 'SELECT idUser FROM t_user WHERE idUser = :idUser';
 
@@ -126,6 +126,14 @@ class Database {
             return $result[0];
         }
     }
+    /**
+     * créer l'article dans la base de données
+     * @param $artname-> 1, nom de l'utilisateur
+     * @param $artstatus-> 2, status de l'utilisateur
+     * @param $artimage-> 3, nom de l'utilisateu
+     * @param $artdescription-> 4, nom de l'utilisateur
+     * @param $artuser-> 5, nom de l'utilisateur
+     */
     public function insertArticle($artName,$artstatus,$artimage,$artdescription,$artuser) {
         $query = "INSERT INTO t_article(artName,artStatus,artPicture,artDescription,fkUserArticle) 
         VALUES(:artName,:artstatus,:artimage,:artdescription,:artuser)";

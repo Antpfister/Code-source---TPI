@@ -1,34 +1,41 @@
-<!--
-/// ETML
-/// Auteur : Anthony Pfister
-/// Date : 22.05.2023
-/// Description : page du formulaire pour emprunter un article, en selectionnant les dates de début et de fin
--->
-
 <!DOCTYPE html>
 
 <html>
     <head>
+        <!--
+            /// ETML
+            /// Auteur : Anthony Pfister
+            /// Date : 22.05.2023
+            /// Description : page du formulaire pour emprunter un article, en selectionnant les dates de début et de fin.
+            ///               Affichage d'un message d'erreur si les dates saisis ne sont pas cohèrente avec la date du jour.
+        -->
         <meta charset="utf-8">
         <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title id="title">Emprunter - Gestion de prêt entre voisins</title>
     </head>
     <body>
     <?php $actif = 0?>
+        <!--incrustation navigateur-->
         <?php include "menu.php"?>
+        <!--Check si l'utilisateur est connecté-->
         <?php include "checkConnection.php"?>
+
         <?php 
+            // récupère l'id de l'article.
             $id = $_GET['id'];
 
+            // récupère les données de l'article
             $connector = new Database();
             $article = $connector->getArticle($id);
             $connector = null;
         ?>
+        <!--Titre Page-->
         <div class="TitleEmprunt">
             <h1>Emprunt de l'article - <?= $article['artName'] ?></h1>
         </div>
         <br>
         <br>
+        <!--Contenaire pour les informations de l'articles-->
         <div class="infoArticle">
             <div class="imgArticle">
                 <img class="imgarticle" src="../../resources/images/<?= $article["artPicture"] ?>" alt="">
@@ -48,6 +55,7 @@
             <p><?= $article['artDescription'] ?></p>
             <br>
             <br>
+            <!--formulaire d'emprunt d'article-->
             <div class="divformEmprArticle">
                 <form method="post" action="checkEmprunt.php" enctype="multipart/form-data">
                     <label for="Name">Date de début :</label>
@@ -63,6 +71,7 @@
                     <input type="reset" class="btn btn-primary mt-4" value="Vider">
                 </form>
             </div>
+            <!--Message d'erreur-->
             <div class="errMessage">
             <?php  if (isset($_GET['error'])) {
                 
@@ -72,7 +81,7 @@
         </div>
         </div>
 
-
+        <!--incrustation pied de page-->
         <?php include 'footer.php' ?>
     </body>
 </html>

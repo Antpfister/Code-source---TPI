@@ -1,13 +1,14 @@
-<!--
-/// ETML
-/// Auteurs : Anthony Pfister
-/// Date : 17.05.2023
-/// Description : Page de modification d'un article, l'utilisateur doit renseigner les nouvelle information qu'il veut modifier. Si certaines partie ne sont pas rempli alors la modification ne la prend pas en compte
-/// et la partie est inchangé.
--->
 <!DOCTYPE html>
+
 <html>
     <head>
+        <!--
+        /// ETML
+        /// Auteurs : Anthony Pfister
+        /// Date : 17.05.2023
+        /// Description : Page de modification d'un article, l'utilisateur doit renseigner les nouvelle information qu'il veut modifier. Si certaines partie ne sont pas rempli alors la modification ne la prend pas en compte
+        ///               et la partie est inchangé.
+        -->
         <meta charset="utf-8">
         <link rel="stylesheet" Href="../../resources/CSS/style.css">
         <title>Modifier article - Gestion de prêt entre voisins</title>
@@ -15,24 +16,25 @@
     <body>
     <?php $actif = 0?>
         <?php
+
+            /// incruste la page navigation
             include "menu.php";
+            /// incruste la page Database
             include "checkConnection.php";
 
-            if (isset($_GET["id"])) {
-                $idArticle =$_GET["id"];
+            $idArticle =$_GET["id"];
         
-            }
-            if (empty($idArticle)) {
-                $error =+ 1;
-            }
 
+            /// récuperation données de l'article
             $connector = new Database();
             $article=$connector->getArticle($idArticle);
             $connector = null;
         ?>
+        <!--Titre Page-->
         <div class="titleModifArticle">
             <h1 >Modification de l'article "<?= $article['artName'] ?>"</h1>
         </div>
+        <!--Formulaire de modification d'article-->
         <div class="divformModifArticle">
             <form method="post" action="checkModifArticle.php" enctype="multipart/form-data">
                 <label for="Name">Nom de l'article :</label>
@@ -61,6 +63,7 @@
                 <input type="reset" class="btn btn-primary mt-4" value="Vider">
             </form>
         </div>
+        <!--Message d'erreur-->
         <div class="errMessage">
             <?php 
             if (isset($_GET['error'])) {
@@ -68,6 +71,7 @@
             <p>Vous avez mal rempli le formulaire de modification de article !! s'il vous plaie recommencer.</p>
             <?php }?>
         </div>
+        <!--incrustation pied de page-->
         <?php include 'footer.php' ?>
     </body>
 </html>
