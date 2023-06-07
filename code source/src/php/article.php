@@ -34,13 +34,12 @@
             <h1>Article info - <?= $article['artName'] ?></h1>
         </div>
         <!--Message d'erreur-->
-        <div class="errMessage">
-            <?php  if (isset($_GET['error'])) {
-
-             ?>
-            <p>L'article n'est pas disponible !</p>
-            <?php }?>
-        </div>
+        <?php  if (isset($_GET['error'])) {
+        ?>
+            <div class="errMessage">
+                <p>L'article n'est pas disponible !</p>
+            </div>
+        <?php }?>
         <!--Contenaire pour les informations de l'article-->
         <div class="infoArticle">
             <div class="imgArticle">
@@ -71,7 +70,7 @@
             <form action='suppArticle.php' method='get'>
                 <input type='hidden' name="picture" value='<?php echo $article["artPicture"]; ?>'>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
-                <input type="submit" value="Supprimer l'article">
+                <input type="submit" value="Supprimer l'article" class="connButton">
             </form>
         </div>
         <br>
@@ -79,7 +78,7 @@
         <div class="btnModifArticle">
             <form action='modifArticle.php' method='get'>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
-                <input type="submit" value="Modifier l'article">
+                <input type="submit" value="Modifier l'article" class="connButton">
             </form>
         </div>
         <br>
@@ -88,7 +87,7 @@
         <div class="btnEmprArticle">
             <form action='empruntArticle.php' method='get'>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
-                <input type="submit" value="Emprunter l'article">
+                <input type="submit" value="Emprunter l'article" class="connButton">
             </form>
         </div>
         <br>

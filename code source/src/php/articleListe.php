@@ -32,18 +32,17 @@
         <br>
         <br>
         <!--Formulaire barre de recherche-->
-        <form action = "checkRecherchebarre.php" method = "get">
-            <input type = "search" name = "terme">
-            <input type = "submit" name = "btn" value = "Rechercher">
+        <form action = "checkRecherchebarre.php" method = "get" class="search">
+            <input type = "search" name = "terme" class="searchTerm" placeholder="Chercher un article par rapport à sa localisation ?">
+            <input type = "submit" name = "btn" value = "Rechercher" class="searchButton">
         </form>
         <!--Message d'erreur-->
-        <div class="errMessage">
-            <?php  if (isset($_GET['error'])) {
-
-             ?>
-            <p>Vous n'avez rien mis dans la barre de recherche !! s'il vous plaie recommencer.</p>
-            <?php }?>
-        </div>
+        <?php  if (isset($_GET['error'])) {
+        ?>
+            <div class="errMessage">
+                <p>Vous n'avez rien mis dans la barre de recherche !! s'il vous plaie recommencer.</p>
+            </div>
+        <?php }?>
         <br>
         <br>
         <?php

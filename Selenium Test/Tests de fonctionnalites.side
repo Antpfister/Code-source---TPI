@@ -139,9 +139,9 @@
       "id": "1f62edad-e783-45cf-a5d1-09fa25086b02",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(20)",
+      "target": "css=.connButton:nth-child(20)",
       "targets": [
-        ["css=.btn:nth-child(20)", "css:finder"],
+        ["css=.connButton:nth-child(20)", "css:finder"],
         ["xpath=//input[@value='Ajouter']", "xpath:attributes"],
         ["xpath=//input[5]", "xpath:position"]
       ],
@@ -207,10 +207,10 @@
       "id": "5ecc0bfe-68c0-41ca-ad67-80117d802763",
       "comment": "",
       "command": "click",
-      "target": "css=.userEmprlist:nth-child(13) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle",
+      "target": "css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle",
       "targets": [
-        ["css=.userEmprlist:nth-child(13) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle", "css:finder"],
-        ["xpath=//div[2]/div/a/img", "xpath:position"]
+        ["css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[5]/div/a/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -464,9 +464,9 @@
       "id": "402db141-c91a-48ab-8ed1-a9cc74432992",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(21)",
+      "target": "css=.connButton:nth-child(21)",
       "targets": [
-        ["css=.btn:nth-child(21)", "css:finder"],
+        ["css=.connButton:nth-child(21)", "css:finder"],
         ["xpath=//input[@value='Modifier']", "xpath:attributes"],
         ["xpath=//input[6]", "xpath:position"]
       ],
@@ -506,22 +506,22 @@
       "id": "9761d850-38f8-413e-aa77-3d4764fb23ba",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(21)",
+      "target": "css=.connButton:nth-child(21)",
       "targets": [
-        ["css=.btn:nth-child(21)", "css:finder"],
+        ["css=.connButton:nth-child(21)", "css:finder"],
         ["xpath=//input[@value='Modifier']", "xpath:attributes"],
         ["xpath=//input[6]", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "9028e5a5-e299-4bf4-841a-fb298d839276",
+      "id": "730acfdb-cf75-4283-a369-471f46ec1ef8",
       "comment": "",
       "command": "click",
-      "target": "css=.btnModifArticle input:nth-child(2)",
+      "target": "css=.btnModifArticle .connButton",
       "targets": [
-        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["css=.btnModifArticle .connButton", "css:finder"],
         ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
-        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+        ["xpath=//div[4]/form/input[2]", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -554,9 +554,9 @@
       "id": "d0c3d984-fd3e-4410-b0dc-8d35b23915ac",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(21)",
+      "target": "css=.connButton:nth-child(21)",
       "targets": [
-        ["css=.btn:nth-child(21)", "css:finder"],
+        ["css=.connButton:nth-child(21)", "css:finder"],
         ["xpath=//input[@value='Modifier']", "xpath:attributes"],
         ["xpath=//input[6]", "xpath:position"]
       ],
@@ -565,11 +565,11 @@
       "id": "9eb2c8b4-68a9-40c2-b246-9c55525e1206",
       "comment": "",
       "command": "click",
-      "target": "css=.btnModifArticle input:nth-child(2)",
+      "target": "css=.btnModifArticle .connButton",
       "targets": [
-        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["css=.btnModifArticle .connButton", "css:finder"],
         ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
-        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+        ["xpath=//div[6]/form/input[2]", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -599,9 +599,9 @@
       "id": "f0399199-99df-4da0-9878-7aae6065b7f4",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(21)",
+      "target": "css=.connButton:nth-child(21)",
       "targets": [
-        ["css=.btn:nth-child(21)", "css:finder"],
+        ["css=.connButton:nth-child(21)", "css:finder"],
         ["xpath=//input[@value='Modifier']", "xpath:attributes"],
         ["xpath=//input[6]", "xpath:position"]
       ],
@@ -620,20 +620,20 @@
       "id": "eda103a5-1134-4ca8-9aa1-2a99a7ab60d5",
       "comment": "",
       "command": "click",
-      "target": "css=.btnModifArticle input:nth-child(2)",
+      "target": "css=.btnModifArticle .connButton",
       "targets": [
-        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["css=.btnModifArticle .connButton", "css:finder"],
         ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
-        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+        ["xpath=//div[6]/form/input[2]", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "e190fe81-307e-4da1-8c0f-f0b542fa8258",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(21)",
+      "target": "css=.connButton:nth-child(21)",
       "targets": [
-        ["css=.btn:nth-child(21)", "css:finder"],
+        ["css=.connButton:nth-child(21)", "css:finder"],
         ["xpath=//input[@value='Modifier']", "xpath:attributes"],
         ["xpath=//input[6]", "xpath:position"]
       ],
@@ -750,9 +750,9 @@
       "id": "1306fa38-00f7-430b-99e8-e24601968531",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(10)",
+      "target": "css=.connButton:nth-child(10)",
       "targets": [
-        ["css=.btn:nth-child(10)", "css:finder"],
+        ["css=.connButton:nth-child(10)", "css:finder"],
         ["xpath=//input[@value='Emprunter']", "xpath:attributes"],
         ["xpath=//input[4]", "xpath:position"]
       ],
@@ -807,9 +807,9 @@
       "id": "1c02edd7-8b14-445e-a3b0-c3e3968748b9",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(21)",
+      "target": "css=.connButton:nth-child(21)",
       "targets": [
-        ["css=.btn:nth-child(21)", "css:finder"],
+        ["css=.connButton:nth-child(21)", "css:finder"],
         ["xpath=//input[@value='Modifier']", "xpath:attributes"],
         ["xpath=//input[6]", "xpath:position"]
       ],
@@ -948,9 +948,9 @@
       "id": "832a6806-0dd9-434d-8005-b770204f1870",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(10)",
+      "target": "css=.connButton:nth-child(10)",
       "targets": [
-        ["css=.btn:nth-child(10)", "css:finder"],
+        ["css=.connButton:nth-child(10)", "css:finder"],
         ["xpath=//input[@value='Emprunter']", "xpath:attributes"],
         ["xpath=//input[4]", "xpath:position"]
       ],
@@ -998,11 +998,11 @@
       "id": "198d2f8c-abf1-43d7-abf6-6394aa823e87",
       "comment": "",
       "command": "click",
-      "target": "css=.userEmprlistconn:nth-child(3) input:nth-child(2)",
+      "target": "css=.connButton:nth-child(2)",
       "targets": [
-        ["css=.userEmprlistconn:nth-child(3) input:nth-child(2)", "css:finder"],
-        ["xpath=(//input[@value=\"Arrêter l'emprunt\"])[2]", "xpath:attributes"],
-        ["xpath=//div[2]/div[3]/form/input[2]", "xpath:position"]
+        ["css=.connButton:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Arrêter l'emprunt\"]", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
       ],
       "value": ""
     }]
@@ -1103,9 +1103,9 @@
       "id": "0988a31b-6bfd-4014-b11e-fd63efc2a181",
       "comment": "",
       "command": "click",
-      "target": "css=.btn:nth-child(10)",
+      "target": "css=.connButton:nth-child(10)",
       "targets": [
-        ["css=.btn:nth-child(10)", "css:finder"],
+        ["css=.connButton:nth-child(10)", "css:finder"],
         ["xpath=//input[@value='Emprunter']", "xpath:attributes"],
         ["xpath=//input[4]", "xpath:position"]
       ],

@@ -67,20 +67,18 @@
                     <br>
                     <br>
                     <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
-                    <input type="submit" class="btn btn-primary mt-4" value="Emprunter">
-                    <input type="reset" class="btn btn-primary mt-4" value="Vider">
+                    <input type="submit"  value="Emprunter" class="connButton">
+                    <input type="reset"  value="Vider" class="connButton">
                 </form>
             </div>
-            <!--Message d'erreur-->
+        </div>
+        <!--Message d'erreur-->
+        <?php  if (isset($_GET['error'])) {
+        ?>
             <div class="errMessage">
-            <?php  if (isset($_GET['error'])) {
-                
-             ?>
-            <p>Il y a eu une erreur! s'il vous plait recommencer. </p>
-            <?php }?>
-        </div>
-        </div>
-
+                <p>Il y a eu une erreur! s'il vous plait recommencer. </p>
+            </div>
+        <?php }?>
         <!--incrustation pied de page-->
         <?php include 'footer.php' ?>
     </body>

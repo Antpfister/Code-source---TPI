@@ -48,18 +48,17 @@
                 <label for="huey">indisponible</label>
                 <br>
                 <br>
-                <input type="submit" class="btn btn-primary mt-4" value="Ajouter">
-                <input type="reset" class="btn btn-primary mt-4" value="Vider">
+                <input type="submit" class="connButton" value="Ajouter">
+                <input type="reset" class="connButton" value="Vider">
             </form>
         </div>
         <!--Message d'erreur-->
-        <div class="errMessage">
-            <?php 
-            if (isset($_GET['error'])) {
-             ?>
-            <p>Vous avez mal rempli le formulaire d'ajout d'article !! s'il vous plaie recommencer.</p>
-            <?php }?>
-        </div>
+        <?php  if (isset($_GET['error'])) {
+        ?>
+            <div class="errMessage">
+                <p>Vous avez mal rempli le formulaire d'ajout d'article !! s'il vous plaie recommencer.</p>
+            </div>
+        <?php }?>
         <!--incrustation pied de page-->
         <?php include 'footer.php' ?>
     </body>

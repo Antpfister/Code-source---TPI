@@ -36,17 +36,17 @@
             </form>
         </div>
         <!--Message d'erreur-->
-        <div class="errMessage">
-            <?php  if (isset($_GET['error'])) {
+        <?php  if (isset($_GET['error'])) {
                 if (isset($_SESSION["isConnected"])) {
                     $_SESSION["isConnected"] = 0;
                     $_SESSION["userName"] = "";
                 }
 
              ?>
+        <div class="errMessage">
             <p>Vous avez mal rempli le formulaire de connexion !! s'il vous plaie recommencer.</p>
-            <?php }?>
         </div>
+        <?php }?>
         <!--incrustation pied de page-->
         <?php include 'footer.php' ?>
         </body>

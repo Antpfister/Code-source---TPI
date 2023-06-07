@@ -20,7 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `db_gestionpretvoisins`
 --
-
+DROP DATABASE IF EXISTS db_gestionpretvoisins;
+CREATE DATABASE db_gestionpretvoisins;
+USE db_gestionpretvoisins;
 -- --------------------------------------------------------
 
 --

@@ -59,18 +59,17 @@
                 <br>
                 <br>
                 <input type='hidden' name="id" value='<?php echo $article["idArticle"]; ?>'>
-                <input type="submit" class="btn btn-primary mt-4" value="Modifier">
-                <input type="reset" class="btn btn-primary mt-4" value="Vider">
+                <input type="submit"  value="Modifier" class="connButton">
+                <input type="reset"  value="Vider"  class="connButton">
             </form>
         </div>
         <!--Message d'erreur-->
-        <div class="errMessage">
-            <?php 
-            if (isset($_GET['error'])) {
-             ?>
-            <p>Vous avez mal rempli le formulaire de modification de article !! s'il vous plaie recommencer.</p>
-            <?php }?>
-        </div>
+        <?php  if (isset($_GET['error'])) {
+        ?>
+            <div class="errMessage">
+                <p>Vous avez mal rempli le formulaire de modification de article !! s'il vous plaie recommencer.</p>
+            </div>
+        <?php }?>
         <!--incrustation pied de page-->
         <?php include 'footer.php' ?>
     </body>
