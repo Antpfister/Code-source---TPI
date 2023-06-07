@@ -3,17 +3,17 @@
     ETML
     Auteur : Anthony Pfister
     Date 12.05.2023
-    Description : Crée une connexion à db_gestionpretvoisins, et renvoie des données de la db.
+    Description : Crée une connexion à db_gestionpretvoisins, et renvoie des données de la db. Toutes les méthodes qui communique par réquète SQL avec la base de données 
 */
-
+/// incruste la page de configuration des information pour la base données 
 include 'config.php';
 
 class Database {
-    // Variable de classe
+    // Variable de classe.
     private $connector;
 
     /**
-     * Crée la connexion à la db
+     * Crée la connexion à la db.
      */
     public function __construct(){
         $user = $GLOBALS['MM_CONFIG']['database']['username'];
@@ -29,7 +29,9 @@ class Database {
     }
 
     /**
-     * Fait une requête simple
+     * Fait une requête simple.
+     * @param $query-> réquète SQL
+     * @return -> retourne le résultat de la requête SQL
      */
     private function querySimpleExecute($query){
         return $req = $this->connector->query($query);
@@ -37,6 +39,9 @@ class Database {
 
     /**
      * Requête à la db en utilisant les requêtes préparées
+     * @param $query-> réquète SQL
+     * @param $binds-> tableau des valeur qui incrémente les variables
+     * @return -> retourne le résultat de la requête SQL
      */
     private function queryPrepareExecute($query, $binds){
         $req = $this->connector->prepare($query, $binds);
@@ -51,25 +56,11 @@ class Database {
 
         return $req;
     }
-    private function queryPrepareExecuteArray($query, $binds){
-        $req = $this->connector->prepare($query, $binds);
-
-        if (!empty($binds)) {
-            foreach ($binds as $bind) {
-                $req->bindValue($bind["marker"], $bind["value"], $bind["type"]);
-            }
-        }
-        
-        $req->execute();
-        $result = $req->mysqli_stmt_get_result();
-
-
-        return $result;
-    }
-
 
     /**
-     * Retoune les données de la requête sont forme de tableau associatif
+     * Retoune les données de la requête sont forme de tableau associatif.
+     * @param $req-> données de la requête
+     * @return -> tableau associatif
      */
     private function formatData($req){
         return $req->fetchAll(PDO::FETCH_ASSOC);
@@ -77,6 +68,7 @@ class Database {
 
     /**
      * Vide le jeu d'enregistrement
+     * @param $req-> données de la requête
      */
     private function unsetData($req){
         $req->closeCursor();
@@ -84,7 +76,9 @@ class Database {
 
     
     /**
-     * Retourne les données d'un utilisateur grâce à son nom
+     * Retourne les données d'un utilisateur en fonction de son nom.
+     * @param $userName-> nom de l'utilisateur
+     * @return -> toutes les données de l'utilisateur
      */
     public function getUserName($userName){
         $query = 'SELECT * FROM t_user WHERE useName = :userName';
@@ -106,6 +100,12 @@ class Database {
             return $result[0];
         }
     }
+
+    /**
+     * Retourne l'identifiant de l'utilisateur avec selon de la session actuelle
+     * @param $idUser-> identifiant de l'utilisateur
+     * @return -> identifiant de la base de données 
+     */
     public function getUserID($idUser){
         $query = 'SELECT idUser FROM t_user WHERE idUser = :idUser';
 
@@ -126,6 +126,15 @@ class Database {
             return $result[0];
         }
     }
+
+    /**
+     * créer l'article dans la base de données
+     * @param $artname->  nom de l'article
+     * @param $artstatus->  status de l'article
+     * @param $artimage->  nom de l'image de l'article
+     * @param $artdescription->  description de l'article
+     * @param $artuser-> l'identifier de l'utilisateur qui l'a créé 
+     */
     public function insertArticle($artName,$artstatus,$artimage,$artdescription,$artuser) {
         $query = "INSERT INTO t_article(artName,artStatus,artPicture,artDescription,fkUserArticle) 
         VALUES(:artName,:artstatus,:artimage,:artdescription,:artuser)";
@@ -162,6 +171,14 @@ class Database {
 
         $this->unsetData($req);
     }
+
+    /**
+     * créer l'emprunt de l'article dans la base de données
+     * @param $emprDateBegin->  Date de début de l'emprunt
+     * @param $emprDateEnd->  Date de fin de l'emprunt
+     * @param $FKArticle->  identifiant de l'article qui est emprunter
+     * @param $FKUser->  identifiant de l'utilisateur qui fait cette emprunt
+     */
     public function insertLoan($emprDateBegin,$emprDateEnd,$FKArticle,$FKUser) {
         $query = "INSERT INTO t_loan(loaBeginDate,loaEndDate,fkArticle,fkUser) 
         VALUES(:emprDateBegin,:emprDateEnd,:FKArticle,:FKUser)";
@@ -193,6 +210,12 @@ class Database {
 
         $this->unsetData($req);
     }
+
+    /**
+     * retourne toutes les données de tous les articles dans la base de données avec les données de l'utilisateur qui la créé.
+     * @return -> sous forme de tableau,
+     *            toutes les données de tous les articles de la base de données avec les données de l'utilisateur qui la créé.
+     */
     public function getAllArticlesAndInfos(){
         $req = $this->querySimpleExecute('SELECT * FROM t_article
         INNER JOIN t_user ON t_article.fkUserArticle = t_user.idUser');
@@ -202,6 +225,12 @@ class Database {
 
         return $result;
     }
+
+    /**
+     * Retourne toutes les données de tous les emprunts de la base de données avec les données de l'article qui est lier
+     * @return -> sous forme de tableau,
+     *            toutes les données de tous les emprunts de la base de données avec les données de l'article qui est lier
+     */
     public function getAllLoansAndInfos(){
         $req = $this->querySimpleExecute('SELECT * FROM t_loan
         INNER JOIN t_article ON t_loan.fkArticle = t_article.idArticle');
@@ -211,6 +240,12 @@ class Database {
 
         return $result;
     }
+
+    /**
+     * Retourne toutes les données de l'article par rapport à l'identifiant de l'article donné.
+     * @param $id -> l'identifiant de l'article
+     * @return -> toutes les données de l'article sous forme de tableau
+     */
     public function getArticle($id){
         $query = 'SELECT * FROM t_article
         INNER JOIN t_user ON t_article.fkUserArticle = t_user.idUser
@@ -231,6 +266,12 @@ class Database {
 
         return $result[0];
     }
+
+    /**
+     * Retourne toutes les données de l'utilisateur par rapport à l'identifiant de l'utilisateur donné.
+     * @param $idUser -> l'identifiant de l'utilisateur
+     * @return -> toutes les données de l'utilisateur sous forme de tableau
+     */
     public function getUser($idUser){
         $query = 'SELECT * FROM t_user WHERE idUser = :idUser';
 
@@ -250,6 +291,10 @@ class Database {
         return $result[0];
     }
 
+    /**
+     * Supprime l'article de la base de données par rapport à l'identifiant de l'article donné.
+     * @param $idArticle -> l'identifant de l'article
+     */
     public function suppArticle($idArticle){
         $query = 'DELETE FROM `t_article` WHERE `idArticle` = :idArticle';
 
@@ -268,6 +313,11 @@ class Database {
 
 
     }
+
+    /**
+     * Supprime l'emprunt d'un article en fonction de l'identifant de l'article donné.
+     * @param $FKArticle -> l'identifant de l'article
+     */
     public function suppLoan($FKArticle){
         $query = 'DELETE FROM `t_loan` WHERE `fkArticle` = :FKArticle';
 
@@ -286,6 +336,15 @@ class Database {
 
 
     }
+
+    /**
+     * Modifier toutes les données de l'article en fonction de l'identifiant de l'article donné
+     * @param $id->  l'identifiant de l'article 
+     * @param $newname->  Nouveau nom de l'article 
+     * @param $newstatus->  Nouveau status de l'article
+     * @param $newimage->  Nouveau nom pour l'image de l'article
+     * @param $newdescription-> Nouvelle description pour l'article
+     */
     public function userModifArticle($id,$newname,$newstatus,$newimage,$newdescription){
         $query = "UPDATE t_article SET artName = :newname, artStatus = :newstatus, artPicture = :newimage, artDescription = :newdescription WHERE idArticle = :id";
 
@@ -322,6 +381,11 @@ class Database {
         $this->unsetData($req);
     }
 
+    /**
+     * Retourne tous les article de la base de données par rapport à la localisation de l'utilisateur qui l'a créé.
+     * @param $barrRecherche -> nom du lieu rechercher.
+     * @return -> tous les identifiant des articles trouvé.
+     */
     public function searchlocal($barrRecherche){
         $req = $this->querySimpleExecute('SELECT idArticle FROM t_article
         INNER JOIN t_user ON t_article.fkUserArticle = t_user.idUser
@@ -333,6 +397,12 @@ class Database {
 
         return $result;
     }
+
+    /**
+     * Modifie le nombre d'emprunt actuel dans les données de l'utilisateur par rapport à son identifiant donné.
+     * @param $id -> l'identifiant de l'utilisateur.
+     * @param $NbLoan -> le nombre d'emprunt qu'il faut actualiser dans la base de données.
+     */
     public function UpdateNbLoanUser($id,$NbLoan){
         $query = "UPDATE t_user SET useNbLoan = :NbLoan WHERE idUser = :id";
 
@@ -353,6 +423,12 @@ class Database {
 
         $this->unsetData($req);
     }
+
+    /**
+     * Modifie le status de l'article en fonction de l'identifiant donné.
+     * @param $id -> l'identifiant de l'article
+     * @param $artstatus -> le nouveau status à modifier dans la base de données.
+     */
     public function UpdateStatusArticle($id,$artstatus){
         $query = "UPDATE t_article SET artStatus = :artstatus WHERE idArticle = :id";
 
@@ -373,6 +449,12 @@ class Database {
 
         $this->unsetData($req);
     }
+
+    /**
+     * Modifie le nombre d'article créer dans les données de l'utilisateur en fonction de l'identifiant donné
+     * @param $id -> l'identifiant de l'utilisateur.
+     * @param $NbArticles -> le nombre d'article créer par l'utilisateur à actualiser.
+     */
     public function UpdateNbArticleUser($id,$NbArticles){
         $query = "UPDATE t_user SET useNbArticles = :NbArticles WHERE idUser = :id";
 

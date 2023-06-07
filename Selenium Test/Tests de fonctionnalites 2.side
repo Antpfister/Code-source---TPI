@@ -1,0 +1,1218 @@
+{
+  "id": "7a002ca9-e37b-4a97-90ee-09112e67ff5e",
+  "version": "2.0",
+  "name": "Tests de fonctionnalitées 2",
+  "url": "http://localhost",
+  "tests": [{
+    "id": "94059ef4-acf2-4fd1-aeaa-f2365d1013cc",
+    "name": "Test 2 : Ajout article",
+    "commands": [{
+      "id": "d2694e83-994b-4e3e-92b7-04ac97b4e94d",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cfc1152e-c675-4465-ab8a-3986d093f1a0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ebce1e6-57a9-472b-af85-966f2cb014bd",
+      "comment": "",
+      "command": "click",
+      "target": "id=send",
+      "targets": [
+        ["id=send", "id"],
+        ["css=#send", "css:finder"],
+        ["xpath=//button[@id='send']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Ajouter un article')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "63526648-5a1a-41cd-8bda-fcb613dffd59",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de6f8f30-96d0-45da-ae57-b1b19faab898",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "moto"
+    }, {
+      "id": "74160f9b-b88f-4146-96f3-05d0d7454ab6",
+      "comment": "",
+      "command": "click",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//form[@action='checkInsertArticle.php']", "xpath:attributes"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85baa0aa-097d-4f0d-8bf9-a430de2ac97b",
+      "comment": "",
+      "command": "click",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbd4e5a0-fda1-4887-971f-63688bed1c00",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "D:\\4ème année\\TPI\\Documentation\\dépot image\\moto.jpg"
+    }, {
+      "id": "fb998cad-babf-4253-9e46-b2d1c66ea16d",
+      "comment": "",
+      "command": "click",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39d9d79d-c6b7-46c0-bf1b-702e85ab7d61",
+      "comment": "",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "C'est un article de test pour voir le bon fonctionnement du site."
+    }, {
+      "id": "1f62edad-e783-45cf-a5d1-09fa25086b02",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(20)",
+      "targets": [
+        ["css=.btn:nth-child(20)", "css:finder"],
+        ["xpath=//input[@value='Ajouter']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58cadce7-d14b-4ee8-be27-4a4259def9ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "afffcfab-496a-4270-8dda-ce44add7737a",
+    "name": "Test 10 : Supprimer l'article",
+    "commands": [{
+      "id": "810c2114-d506-45a4-98ed-19a49d56c56d",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0cf86177-3f0a-4395-8bec-b40a7fc88198",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5534ddb2-b5ab-4529-a295-2fb947877be2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[9]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d256cb9-8700-4817-ad10-0476b01891cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(3)",
+      "targets": [
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value=\"Supprimer l'article\"]", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ec28dd9e-0b05-42cf-b963-a38a27082b01",
+    "name": "Test 1 : S'identifier sur le site",
+    "commands": [{
+      "id": "239cc4f5-bf94-44dd-bc46-370f63ba0a4c",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "640d0d1d-ba97-44fb-8fee-948db49756ef",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.navlogin > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'login.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9868ad55-5c87-4285-a6dd-4ae55408e0e5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9560d525-7721-4766-9f7b-2dc0c00374bd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navlogin",
+      "targets": [
+        ["css=.navlogin", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"],
+        ["xpath=//div[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c6dc4a4-ef19-4a23-86b4-cf9b6c0bc1e4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.actif", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'login.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95f93090-96f9-4a7a-aa4a-70cc499552cb",
+      "comment": "",
+      "command": "click",
+      "target": "name=userName",
+      "targets": [
+        ["name=userName", "name"],
+        ["css=.connLabelContainer:nth-child(2) > .connLabel", "css:finder"],
+        ["xpath=//input[@name='userName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a28199ec-e625-41e6-8903-ddb1830c871b",
+      "comment": "",
+      "command": "type",
+      "target": "name=userName",
+      "targets": [
+        ["name=userName", "name"],
+        ["css=.connLabelContainer:nth-child(2) > .connLabel", "css:finder"],
+        ["xpath=//input[@name='userName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "antpfister"
+    }, {
+      "id": "8d7a8e08-de9d-4755-ad6a-1269b3c6a881",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.connLabelContainer:nth-child(3) > .connLabel", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "qwer1234"
+    }, {
+      "id": "986f1f58-ab27-4aa3-8012-a39e231cac4a",
+      "comment": "",
+      "command": "click",
+      "target": "id=sendlogin",
+      "targets": [
+        ["id=sendlogin", "id"],
+        ["css=#sendlogin", "css:finder"],
+        ["xpath=//button[@id='sendlogin']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ca6ac396-5db6-4923-a9e1-ba27d1f4e047",
+    "name": "Test 11 : Se déconnecter du site",
+    "commands": [{
+      "id": "7c5d0b12-72ed-4951-bc97-3b251d5db3a8",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a98e0d17-2065-4eab-8cb3-bf0276d36068",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bc17f33-b9ab-421c-926f-7111fede15c8",
+      "comment": "",
+      "command": "click",
+      "target": "id=send",
+      "targets": [
+        ["id=send", "id"],
+        ["css=#send", "css:finder"],
+        ["xpath=//button[@id='send']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Se déconnecter')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3922bec-8c65-43d8-ade5-58fa84eac0d4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=HOME",
+      "targets": [
+        ["linkText=HOME", "linkText"],
+        ["css=.navHome > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'HOME')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'home.php')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'HOME')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "86812ca4-adc0-4323-9a32-4395cad70472",
+    "name": "Test 3 : Modifier l'article créé",
+    "commands": [{
+      "id": "893fe5b7-1c8c-4551-8d2c-65f37d1614f7",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91d4f57a-49da-4070-8a89-e9037168840a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e73d0f8e-bdf1-41bd-abe4-f4537f4644ff",
+      "comment": "",
+      "command": "click",
+      "target": "css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[5]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9fed502-c60c-41eb-a66f-4f16394a1dca",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnModifArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
+        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2a3e518-5912-4632-923f-1f97284e94c5",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a541f56e-868e-40c5-87cd-5d5f7c2bbf87",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "moto bleu"
+    }, {
+      "id": "402db141-c91a-48ab-8ed1-a9cc74432992",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc4a7e0d-bd10-4bdd-b736-6b32899b8539",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnModifArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
+        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a01caea3-9d5f-4a0f-b593-1a70279687e4",
+      "comment": "",
+      "command": "click",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0cf28f5-ec9e-495b-b2a8-89f898115a0b",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "D:\\4ème année\\TPI\\Documentation\\dépot image\\moto bleu.jpg"
+    }, {
+      "id": "9761d850-38f8-413e-aa77-3d4764fb23ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9028e5a5-e299-4bf4-841a-fb298d839276",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnModifArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
+        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bff7adc5-10f4-4f00-a228-c365fc6d4267",
+      "comment": "",
+      "command": "click",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "730481b1-ef43-40b7-aa4f-c2342768a303",
+      "comment": "",
+      "command": "type",
+      "target": "id=description",
+      "targets": [
+        ["id=description", "id"],
+        ["name=description", "name"],
+        ["css=#description", "css:finder"],
+        ["xpath=//textarea[@id='description']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "C'est un article de test Modifié* pour voir le bon fonctionnement du site."
+    }, {
+      "id": "d0c3d984-fd3e-4410-b0dc-8d35b23915ac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9eb2c8b4-68a9-40c2-b246-9c55525e1206",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnModifArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
+        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b73565ba-38f1-4885-8725-d6c2fc2f164e",
+      "comment": "",
+      "command": "click",
+      "target": "css=label:nth-child(17)",
+      "targets": [
+        ["css=label:nth-child(17)", "css:finder"],
+        ["xpath=//label[6]", "xpath:position"],
+        ["xpath=//label[contains(.,'indisponible')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbb09212-ada3-4d31-bf6f-b828c45477d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=indisponible",
+      "targets": [
+        ["id=indisponible", "id"],
+        ["css=#indisponible", "css:finder"],
+        ["xpath=//input[@id='indisponible']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0399199-99df-4da0-9878-7aae6065b7f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b85f252a-9c8c-4368-bc48-524c05f138f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.infoArticle",
+      "targets": [
+        ["css=.infoArticle", "css:finder"],
+        ["xpath=//body/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eda103a5-1134-4ca8-9aa1-2a99a7ab60d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnModifArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
+        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e190fe81-307e-4da1-8c0f-f0b542fa8258",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86a86813-967c-46c8-a038-b88df629de29",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=HOME",
+      "targets": [
+        ["linkText=HOME", "linkText"],
+        ["css=.navHome > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'HOME')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'home.php')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'HOME')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f4912ab5-48b2-44d2-a97d-ffd7b8dcdd43",
+    "name": "Test 4 : Empunter l'article créé",
+    "commands": [{
+      "id": "4e0ac782-ca55-4bf6-872e-b6dad79bcb04",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ed3baf3-a9b1-4d4b-a7db-b605384103b3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66e9023b-f1c8-4888-bee7-f6cd0116d0e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.connListeArticle:nth-child(18) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[9]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee760f59-9148-421c-aa22-7715a0edf0a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnEmprArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnEmprArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Emprunter l'article\"]", "xpath:attributes"],
+        ["xpath=//div[6]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "643289a4-fb90-41d4-93b5-fb1d3821c83f",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ed0d355-5b13-4783-b6b9-3b2ae77ef072",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2023-05-31"
+    }, {
+      "id": "f80a5fba-f947-46fd-82e4-a822ca6de4d1",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed4ffaa7-7981-449f-85f4-c88c45ad431f",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2023-06-08"
+    }, {
+      "id": "1306fa38-00f7-430b-99e8-e24601968531",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(10)",
+      "targets": [
+        ["css=.btn:nth-child(10)", "css:finder"],
+        ["xpath=//input[@value='Emprunter']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ed5433c1-2e05-4f5a-94ce-bd1eabc50aa9",
+    "name": "Test 5 : Modifier le statut de l'article",
+    "commands": [{
+      "id": "01eb97b1-29e0-4300-86a4-cd405eef6159",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3bf297c9-c12f-4dd1-9a3f-aa7ac887d8a7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f016ff29-b9d6-4bba-af79-0a28e2af952c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.userEmprlist:nth-child(11) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.userEmprlist:nth-child(11) > .userEmprlistconn:nth-child(3) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[2]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebf0a0e7-8cd7-40d5-9438-cf101bad21d7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnModifArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnModifArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Modifier l'article\"]", "xpath:attributes"],
+        ["xpath=//div[5]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c02edd7-8b14-445e-a3b0-c3e3968748b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(21)",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//input[@value='Modifier']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a01d2ff-c870-4b8b-a722-158dbbd78b88",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navUserDetail",
+      "targets": [
+        ["css=.navUserDetail", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"],
+        ["xpath=//div[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e91bb657-9146-4a2c-b594-8b34d40c3184",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navUserDetail",
+      "targets": [
+        ["css=.navUserDetail", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"],
+        ["xpath=//div[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "16cdc2fb-d8e7-4b5d-8a0c-5a935801ff50",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4ef672a4-a7df-4e78-bb57-11563ce92368",
+    "name": "Test 6: Refaire l'emprunt de l'article précédemment supprimer",
+    "commands": [{
+      "id": "e680f565-d8fa-4e29-962a-93661b392622",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9481c40-e536-4168-acd0-1a662aa9fb41",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0726a97-79b2-4647-8478-c4d8fe4ae9b4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[5]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2c4f86f-f280-4d41-8f5f-f48c0eddc814",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnEmprArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnEmprArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Emprunter l'article\"]", "xpath:attributes"],
+        ["xpath=//div[6]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5636347-df06-47c0-9d72-e60257a62439",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56fd44ea-a21a-4b37-a175-b3a2232effbf",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2023-05-31"
+    }, {
+      "id": "7642117b-595e-4892-af95-b0ec0b0884b1",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f69d1a47-3351-450f-8b6b-e0fc4958b589",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2023-06-08"
+    }, {
+      "id": "832a6806-0dd9-434d-8005-b770204f1870",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(10)",
+      "targets": [
+        ["css=.btn:nth-child(10)", "css:finder"],
+        ["xpath=//input[@value='Emprunter']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "480238b5-7e64-43f0-907d-997689c5cf67",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f0d4a22e-0780-4010-bb76-33a920c821f0",
+    "name": "Test 7 : Supprimer l'emprunt ",
+    "commands": [{
+      "id": "b12f9860-5517-4990-bc22-a9f304ab308f",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af6c609f-7512-4d8b-ba9a-19ee8e9ab4e5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "198d2f8c-abf1-43d7-abf6-6394aa823e87",
+      "comment": "",
+      "command": "click",
+      "target": "css=.userEmprlistconn:nth-child(3) input:nth-child(2)",
+      "targets": [
+        ["css=.userEmprlistconn:nth-child(3) input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value=\"Arrêter l'emprunt\"])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div[3]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e813c16d-5258-4f30-b9ce-d46e90e00835",
+    "name": "Test 8 : Refaire l'emprunt de l'article une nouvelle fois ",
+    "commands": [{
+      "id": "4c134c65-5658-4160-bdb8-a779e1e60b69",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "069aed9b-2587-4e2a-97a3-a4b8e4c7a0c0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=antpfister / Profil",
+      "targets": [
+        ["linkText=antpfister / Profil", "linkText"],
+        ["css=.navUserDetail > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'antpfister / Profil')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'userDetail.php')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'antpfister / Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a93a831-20b8-4975-b324-b0ad642bed29",
+      "comment": "",
+      "command": "click",
+      "target": "css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle",
+      "targets": [
+        ["css=.userEmprlistconn:nth-child(6) > .imgarticle .imgarticle", "css:finder"],
+        ["xpath=//div[5]/div/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c5d71c5-f2f4-46d7-b3bf-58b90fc385d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btnEmprArticle input:nth-child(2)",
+      "targets": [
+        ["css=.btnEmprArticle input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@value=\"Emprunter l'article\"]", "xpath:attributes"],
+        ["xpath=//div[6]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e957ba8b-b59f-4b27-b2ed-cb046f81fa14",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca8f9dac-bf19-440c-afca-06fe465057d4",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateBegin",
+      "targets": [
+        ["name=DateBegin", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='DateBegin']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2023-05-31"
+    }, {
+      "id": "0ecae487-0a4f-4f9b-9e19-5db4d9a05a43",
+      "comment": "",
+      "command": "click",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "af9f6760-b459-4db7-ab09-3efe58676a11",
+      "comment": "",
+      "command": "type",
+      "target": "name=DateEnd",
+      "targets": [
+        ["name=DateEnd", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='DateEnd']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "2023-06-08"
+    }, {
+      "id": "0988a31b-6bfd-4014-b11e-fd63efc2a181",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(10)",
+      "targets": [
+        ["css=.btn:nth-child(10)", "css:finder"],
+        ["xpath=//input[@value='Emprunter']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "99e66a5d-1688-4eb8-af43-55f7dfd67120",
+    "name": "Test 9 : Rechercher un article dans la barre de recherche",
+    "commands": [{
+      "id": "643fccd8-0418-41b3-aa26-ae63c12980f4",
+      "comment": "",
+      "command": "open",
+      "target": "/src/php/home.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37032a82-b003-479e-b7de-ba2653471074",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.navListArticle > .navBarr", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e49fc1ed-9d9a-4dc9-9913-f30c833091b9",
+      "comment": "",
+      "command": "click",
+      "target": "name=terme",
+      "targets": [
+        ["name=terme", "name"],
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='terme']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4b737c9-4e49-4080-8814-ce9182a1cf97",
+      "comment": "",
+      "command": "type",
+      "target": "name=terme",
+      "targets": [
+        ["name=terme", "name"],
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='terme']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "lut"
+    }, {
+      "id": "a7b6579e-b8ab-40fb-a46b-2072d59768a3",
+      "comment": "",
+      "command": "click",
+      "target": "name=btn",
+      "targets": [
+        ["name=btn", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='btn']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fc561bf-8840-4c78-a3be-40fe7dfa994a",
+      "comment": "",
+      "command": "click",
+      "target": "name=terme",
+      "targets": [
+        ["name=terme", "name"],
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='terme']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06a2a96e-4519-4b31-99cf-b354bf3e715b",
+      "comment": "",
+      "command": "type",
+      "target": "name=terme",
+      "targets": [
+        ["name=terme", "name"],
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='terme']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "laus"
+    }, {
+      "id": "cc74b597-645b-4ff5-a1bd-a5ff1882f3c2",
+      "comment": "",
+      "command": "click",
+      "target": "name=btn",
+      "targets": [
+        ["name=btn", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='btn']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd055eed-b59f-4964-8e9c-b7efeb85133e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Liste des Articles",
+      "targets": [
+        ["linkText=Liste des Articles", "linkText"],
+        ["css=.actif", "css:finder"],
+        ["xpath=//a[contains(text(),'Liste des Articles')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'articleListe.php')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Liste des Articles')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "f406560c-39b9-472a-93d4-d92960b532ed",
+    "name": "Tests complete des fonctionnalitées du site \"Gestion de prêt entre voisins\"",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ec28dd9e-0b05-42cf-b963-a38a27082b01", "94059ef4-acf2-4fd1-aeaa-f2365d1013cc", "86812ca4-adc0-4323-9a32-4395cad70472", "f4912ab5-48b2-44d2-a97d-ffd7b8dcdd43", "ed5433c1-2e05-4f5a-94ce-bd1eabc50aa9", "4ef672a4-a7df-4e78-bb57-11563ce92368", "f0d4a22e-0780-4010-bb76-33a920c821f0", "e813c16d-5258-4f30-b9ce-d46e90e00835", "99e66a5d-1688-4eb8-af43-55f7dfd67120", "afffcfab-496a-4270-8dda-ce44add7737a", "ca6ac396-5db6-4923-a9e1-ba27d1f4e047"]
+  }],
+  "urls": ["http://localhost/"],
+  "plugins": []
+}

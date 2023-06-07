@@ -5,12 +5,14 @@
 /// Description : Vérifie que l'utilisateur est connecté, sinon redirige vers la page "login"
 -->
 <?php
-
+    /// récupère le nom de l'utilisateur
     $connector = new Database();
     $checkName = $connector->getUserName($_SESSION["userName"]);
     $connector = null;
 
-    if ($_SESSION["isConnected"] == 0) {
+    /// vérifie que l'utilisateur est bien connecter
+    if ($_SESSION["isConnected"] == 0 || $_SESSION["isConnected"] == null) {
+        // retour sur la page login
         echo '<meta http-equiv="refresh" content="0, URL=login.php">';
     }
 

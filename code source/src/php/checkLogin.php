@@ -2,12 +2,14 @@
 /// ETML
 /// Auteur : Anthony Pfister
 /// Date : 21.05.2021
-/// Description : check les information pour la connexion de l'utilisateur
+/// Description : check les informations pour la connexion de l'utilisateur
 -->
 <?php
-    include "Database.php";
+    /// incruste la page Database
+    include "lib/Database.php";
+    /// démarre la session
     session_start();
-
+    /// déclaration de variable de vérification 
     $error = 0;
 
     // Vérifie pour le nom
@@ -21,7 +23,7 @@
     else {
         $error++;
     }
-    
+    /// récupère le nom de l'utilisateur 
     $connector = new Database();
     $user = $connector->getUserName($userName);
     $connector = null;
@@ -47,17 +49,17 @@
     else {
         $error++;
     }
-    
+    /// vérifie si il n'y a pas eu d'erreur 
     if($error == 0){
-
+        /// connecte l'utilisateur à la session
         $_SESSION["isConnected"] = 1;
         $_SESSION["userName"] = $userName;
         $_SESSION["idUser"] = $user["idUser"];
-
+        /// retour sur la page home
         echo '<meta http-equiv="refresh" content="0, URL=home.php">';
     }
     else {
-        
+        /// retour sur la page de login avec un message d'erreur
         echo '<meta http-equiv="refresh" content="0, URL=login.php?error=1">';
         
     }
