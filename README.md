@@ -40,3 +40,8 @@ Importation des tests automatisé avec Selenium IDE :
 - Activer l'autorisation du téléchargement des fichier dans les paramètres de l'extension.
 - Modifier le chemin absolue du téléchargement des images des tests automatiques "ajout article" et "modifier article" par le nouveau chemin absolue de votre pc pour le fichier "Dépot image"  .
 
+Utilisateur du site :
+
+antpfister : qwer1234
+client : qwer1234
+client2 : qwer1234
