@@ -24,6 +24,7 @@ importation des utilisateurs pour la base de données :
 
 - Copier la requête SQL qui se trouve dans le fichier "User.txt" dans le dossier DB.
 - Coller et executer la requête dans le localhost dans PHPMyAdmin.
+- rajouter le mots de passe "qwer1234" pour cette utilisateur
 
 Importation de la base de données :
 
